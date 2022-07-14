@@ -11,6 +11,11 @@
   &__left,
   &__right {
     display: flex;
+    align-items: center;
     gap: a.rem(16);
+  }
+
+  .fa-house {
+    transform: scale(0.9);
   }
 }
