@@ -10,6 +10,7 @@
 
   &__left,
   &__right {
+    position: relative;
     display: flex;
     align-items: center;
     gap: a.rem(16);

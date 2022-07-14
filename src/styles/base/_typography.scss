@@ -2,6 +2,7 @@
 
 html {
   font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+  font-weight: 500;
   color: var(--text-color);
 }
 
@@ -18,5 +19,5 @@ p {
 }
 
 i {
-  font-size: clamp(a.rem(20), 16px + 1.25vw, a.rem(28));
+  font-size: clamp(a.rem(18), 14px + 1.25vw, a.rem(28));
 }
