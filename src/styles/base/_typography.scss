@@ -15,3 +15,7 @@ h2 {
 p {
   font-size: clamp(a.rem(16), 10px + 1.25vw, a.rem(28));
 }
+
+i {
+  font-size: clamp(a.rem(20), 16px + 1.25vw, a.rem(28));
+}

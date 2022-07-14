@@ -1,0 +1,10 @@
+@use '../abstracts' as a;
+
+.body,
+.container {
+  background-color: var(--background-color-2);
+}
+
+i {
+  cursor: pointer;
+}
