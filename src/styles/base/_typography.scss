@@ -1,0 +1,17 @@
+@use '../abstracts' as a;
+
+html {
+  font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: clamp(a.rem(28), 16px + 2vw, a.rem(40));
+}
+
+h2 {
+  font-size: clamp(a.rem(22), 14px + 1.5vw, a.rem(36));
+}
+
+p {
+  font-size: clamp(a.rem(16), 10px + 1.25vw, a.rem(28));
+}

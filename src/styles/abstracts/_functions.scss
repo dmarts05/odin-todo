@@ -1,0 +1,11 @@
+@use 'sass:math';
+
+// Converts pixel units to rem units
+// Throws error if given parameter has units
+@function rem($pixels) {
+  @if (math.is-unitless($pixels)) {
+    @return math.div($pixels, 16) + rem;
+  } @else {
+    @error 'Given parameter must be unitless!';
+  }
+}
