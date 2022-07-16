@@ -6,7 +6,12 @@
 }
 
 i {
+  transition: color 0.25s;
   cursor: pointer;
+}
+
+i:hover {
+  color: var(--text-secondary-color);
 }
 
 .red {

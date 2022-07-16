@@ -17,6 +17,10 @@
     gap: a.rem(16);
   }
 
+  &__icon:active {
+    color: var(--background-color-1);
+  }
+
   .fa-house {
     transform: scale(0.9);
   }
