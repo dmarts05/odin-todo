@@ -36,11 +36,20 @@
     cursor: pointer;
 
     &:hover {
+      color: var(--text-color-2);
       background-color: var(--background-color-1);
+
+      i {
+        color: var(--text-color-2);
+      }
     }
   }
 
   &__project-name {
     text-transform: uppercase;
+  }
+
+  &__icon {
+    transform: scale(0.75);
   }
 }
