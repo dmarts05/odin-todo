@@ -1,0 +1,10 @@
+@use '../abstracts' as a;
+
+.project-view {
+  grid-column: 1 / -1;
+  background-color: var(--background-color-3);
+
+  &.sidebar-active {
+    grid-column: auto;
+  }
+}

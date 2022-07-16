@@ -1,16 +1,18 @@
 @use '../abstracts' as a;
 
 .sidebar {
-  position: absolute;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   width: a.rem(250);
-  height: calc(100% - a.rem(60) - a.rem(32));
-  margin-top: a.rem(60);
   padding: a.rem(16) 0;
   background-color: var(--background-color-2);
   box-shadow: rgba(0, 0, 0, 0.01) 10px 10px 0px, rgba(0, 0, 0, 0.03) 6px 6px 0px;
+  z-index: 1;
+
+  &.sidebar-active {
+    display: flex;
+  }
 
   &__projects {
     display: flex;

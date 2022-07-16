@@ -1,6 +1,7 @@
 @use '../abstracts' as a;
 
 .header {
+  grid-column: 1 / -1;
   display: flex;
   justify-content: space-between;
   align-items: center;
