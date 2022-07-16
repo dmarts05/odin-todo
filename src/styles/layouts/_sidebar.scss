@@ -1,17 +1,18 @@
 @use '../abstracts' as a;
 
 .sidebar {
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   width: a.rem(250);
   padding: a.rem(16) 0;
   background-color: var(--background-color-2);
   box-shadow: rgba(0, 0, 0, 0.01) 10px 10px 0px, rgba(0, 0, 0, 0.03) 6px 6px 0px;
-  z-index: 1;
+  transform: translateX(a.rem(-250));
+  transition: transform 0.25s;
 
   &.sidebar-active {
-    display: flex;
+    transform: translateX(0);
   }
 
   &__projects {
