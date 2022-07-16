@@ -1,2 +1,38 @@
+@use '../abstracts' as a;
+
 input[type='checkbox'] {
+  position: relative;
+  margin-top: a.rem(6);
+  width: 1.5em;
+  height: 1.5em;
+  border: a.rem(2) solid var(--text-color-1);
+  border-radius: 50%;
+  appearance: none;
+  outline: 0;
+  cursor: pointer;
+  transition: background 0.25s;
+
+  &::before {
+    position: absolute;
+    content: '';
+    display: block;
+    top: a.rem(1.5);
+    left: a.rem(6);
+    width: a.rem(4);
+    height: a.rem(10);
+    border-style: solid;
+    border-color: var(--background-color-3);
+    border-width: 0 a.rem(2) a.rem(2) 0;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+  &:checked {
+    background: var(--text-color-1);
+    &::before {
+      opacity: 1;
+    }
+    ~ label::before {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
 }
