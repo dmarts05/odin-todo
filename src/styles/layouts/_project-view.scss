@@ -1,11 +1,60 @@
 @use '../abstracts' as a;
 
 .project-view {
+  display: flex;
+  flex-direction: column;
   grid-column: 1 / -1;
   padding: a.rem(32);
   background-color: var(--background-color-3);
 
   &.sidebar-active {
     grid-column: auto;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: a.rem(32);
+  }
+
+  &__title {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__settings {
+    display: flex;
+    align-items: center;
+    gap: a.rem(16);
+  }
+
+  &__task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: a.rem(16);
+    margin-bottom: a.rem(16);
+    border-bottom: a.rem(3) solid var(--background-color-1);
+
+    &__left {
+      display: flex;
+      align-items: center;
+      gap: a.rem(8);
+    }
+
+    &__right {
+      display: flex;
+      align-items: center;
+      gap: a.rem(12);
+    }
+
+    &__icon {
+      transform: scale(0.75);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
