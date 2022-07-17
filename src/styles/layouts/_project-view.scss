@@ -13,6 +13,8 @@
 
   &__header {
     display: flex;
+    flex-wrap: wrap;
+    gap: a.rem(16);
     justify-content: space-between;
     align-items: center;
     padding-bottom: a.rem(32);
@@ -31,8 +33,10 @@
 
   &__task {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: a.rem(16);
     padding-bottom: a.rem(16);
     margin-bottom: a.rem(16);
     border-bottom: a.rem(3) solid var(--background-color-1);

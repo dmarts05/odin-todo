@@ -36,13 +36,10 @@
     transition: background-color 0.15s, transform 0.15s;
     cursor: pointer;
 
-    &:hover {
+    &:hover,
+    &.project-active {
       color: var(--text-color-2);
       background-color: var(--background-color-1);
-
-      i {
-        color: var(--text-color-2);
-      }
     }
 
     &:active {
