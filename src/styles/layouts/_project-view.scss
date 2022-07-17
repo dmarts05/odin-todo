@@ -46,11 +46,7 @@
     &__right {
       display: flex;
       align-items: center;
-      gap: a.rem(12);
-    }
-
-    &__icon {
-      transform: scale(0.75);
+      gap: a.rem(16);
     }
 
     &:last-child {

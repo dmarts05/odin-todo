@@ -21,4 +21,12 @@ p {
 
 i {
   font-size: clamp(a.rem(18), 14px + 1.25vw, a.rem(28));
+
+  &.fa-house {
+    font-size: clamp(a.rem(15), 10px + 1.25vw, a.rem(28));
+  }
+
+  &.project-view__task__icon {
+    font-size: clamp(a.rem(15), 10px + 1.25vw, a.rem(28));
+  }
 }

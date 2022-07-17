@@ -6,12 +6,16 @@
 }
 
 i {
-  transition: color 0.25s;
+  transition: color 0.15s, transform 0.15s;
   cursor: pointer;
-}
 
-i:hover {
-  color: var(--text-color-2);
+  &:hover {
+    color: var(--text-color-2);
+  }
+
+  &:active {
+    transform: scale(0.8);
+  }
 }
 
 .red {
