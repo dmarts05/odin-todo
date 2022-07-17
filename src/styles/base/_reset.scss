@@ -131,10 +131,7 @@ table {
 /* Custom Resets */
 
 /* Hide blue highlight when clicking on mobile */
-input,
-textarea,
-button,
-select,
-a {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+* {
+  -webkit-tap-highlight-color: transparent;
 }
