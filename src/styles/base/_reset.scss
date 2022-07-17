@@ -127,3 +127,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+/* Custom Resets */
+
+/* Hide blue highlight when clicking on mobile */
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
