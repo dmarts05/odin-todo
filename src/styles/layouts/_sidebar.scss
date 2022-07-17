@@ -31,7 +31,7 @@
     display: flex;
     align-items: center;
     gap: a.rem(16);
-    padding: a.rem(8) a.rem(25);
+    padding: a.rem(8) min(a.rem(45), 5vw);
     border-radius: a.rem(8);
     transition: background-color 0.15s, transform 0.15s;
     cursor: pointer;
