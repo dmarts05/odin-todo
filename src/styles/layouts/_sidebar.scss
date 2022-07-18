@@ -37,7 +37,7 @@
     cursor: pointer;
 
     &:hover,
-    &.project-active {
+    &--active {
       color: var(--text-color-2);
       background-color: var(--background-color-1);
     }

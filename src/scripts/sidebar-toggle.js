@@ -5,8 +5,6 @@ const projectView = document.querySelector('.project-view');
 function toggleSidebar() {
   sidebar.classList.toggle('sidebar-active');
   projectView.classList.toggle('sidebar-active');
-
-  changeSidebarToggleIcon();
 }
 
 function changeSidebarToggleIcon() {
@@ -14,16 +12,21 @@ function changeSidebarToggleIcon() {
   sidebarToggle.classList.toggle('fa-angles-right');
 }
 
-function enableSidebarToggling() {
-  sidebarToggle.addEventListener('click', toggleSidebar);
-
+function showSidebarAtWidth(showWidth) {
   window.addEventListener('load', () => {
     const width = window.innerWidth > 0 ? window.innerWidth : screen.width;
 
-    if (width > 700 && !sidebar.classList.contains('sidebar-active')) {
+    if (width > showWidth && !sidebar.classList.contains('sidebar-active')) {
       sidebarToggle.click();
     }
   });
 }
 
-export default enableSidebarToggling;
+function enableSidebarToggling() {
+  sidebarToggle.addEventListener('click', () => {
+    toggleSidebar();
+    changeSidebarToggleIcon();
+  });
+}
+
+export { enableSidebarToggling, showSidebarAtWidth };
