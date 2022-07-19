@@ -1,3 +1,4 @@
+import html from './index.html';
 import './styles/index.scss';
 import fixVhOnMobile from './scripts/vh-fix-mobile';
 import {

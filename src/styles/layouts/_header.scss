@@ -10,10 +10,20 @@
   box-shadow: rgba(0, 0, 0, 0.01) 0px 10px 20px, rgba(0, 0, 0, 0.03) 0px 6px 6px;
 
   &__left,
+  &__center,
   &__right {
-    position: relative;
     display: flex;
     align-items: center;
     gap: a.rem(16);
+  }
+
+  &__center {
+    @include a.breakpoint-max('m') {
+      display: none;
+    }
+  }
+
+  &__logo {
+    width: clamp(a.rem(20), 5vw, a.rem(30));
   }
 }
