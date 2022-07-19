@@ -17,13 +17,11 @@
     gap: a.rem(16);
   }
 
-  &__center {
+  &__logo {
+    width: clamp(a.rem(20), 5vw, a.rem(30));
+
     @include a.breakpoint-max('m') {
       display: none;
     }
-  }
-
-  &__logo {
-    width: clamp(a.rem(20), 5vw, a.rem(30));
   }
 }
