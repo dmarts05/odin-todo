@@ -8,6 +8,7 @@ function setVhUnitVariable() {
 
 function fixVhOnMobile() {
   window.addEventListener('resize', setVhUnitVariable);
+  screen.orientation.addEventListener('change', setVhUnitVariable);
 }
 
 export default setVhUnitVariable;
