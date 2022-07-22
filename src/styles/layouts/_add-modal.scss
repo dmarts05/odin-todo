@@ -1,0 +1,9 @@
+@use '../abstracts' as a;
+
+.add-modal {
+  &__items {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+  }
+}

@@ -3,8 +3,8 @@ const sidebar = document.querySelector('.sidebar');
 const projectView = document.querySelector('.project-view');
 
 function toggleSidebar() {
-  sidebar.classList.toggle('sidebar-active');
-  projectView.classList.toggle('sidebar-active');
+  sidebar.classList.toggle('sidebar--active');
+  projectView.classList.toggle('project-view--active');
 }
 
 function changeSidebarToggleIcon() {

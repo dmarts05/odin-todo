@@ -21,7 +21,7 @@
     ></script>
   </head>
   <body>
-    <div class="container">
+    <div class="wrapper">
       <header class="header">
         <div class="header__left">
           <i class="header__icon fa-solid fa-angles-right" id="sidebar-toggle"></i>
@@ -32,7 +32,7 @@
           <h1 class="header__title">/NextDo/</h1>
         </div>
         <div class="header__right">
-          <i class="header__icon fa-solid fa-plus"></i>
+          <i class="header__icon fa-solid fa-plus" id="add-modal-toggle"></i>
           <i class="header__icon fa-solid fa-circle-user"></i>
         </div>
       </header>
@@ -95,6 +95,12 @@
         </div>
       </div>
       </main>
+      <div class="modal-wrapper add-modal">
+        <div class="add-modal__items">
+          <button class="add-modal__button">Add task</button>
+          <button class="add-modal__button">Add project</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>

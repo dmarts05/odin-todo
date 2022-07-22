@@ -14,7 +14,7 @@
   transition: transform 0.15s;
   overflow: hidden;
 
-  &.sidebar-active {
+  &--active {
     position: initial;
     margin-top: 0;
     height: auto;
