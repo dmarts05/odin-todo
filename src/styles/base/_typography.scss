@@ -16,8 +16,13 @@ h2 {
   font-size: clamp(a.rem(22), 16px + 1.5vw, a.rem(36));
 }
 
-p {
+p,
+button {
   font-size: clamp(a.rem(12), 10px + 1vw, a.rem(20));
+}
+
+button {
+  font-weight: 700;
 }
 
 i {

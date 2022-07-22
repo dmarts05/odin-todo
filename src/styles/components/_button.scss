@@ -1,0 +1,21 @@
+@use '../abstracts' as a;
+
+button {
+  text-transform: uppercase;
+  padding: a.rem(8) a.rem(24);
+  border: a.rem(2) solid var(--text-color-1);
+  border-radius: a.rem(10);
+  color: var(--background-color-1);
+  background-color: var(--text-color-1);
+  cursor: pointer;
+  transition: color 0.15s, background-color 0.15s, transform 0.15s;
+
+  &:hover {
+    color: var(--text-color-1);
+    background-color: var(--background-color-1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
