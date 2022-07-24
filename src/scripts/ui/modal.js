@@ -13,6 +13,14 @@ export class Modal {
     this.modal.classList.add('modal-wrapper--active');
   }
 
+  hideOtherModals() {
+    document.querySelectorAll('.modal-wrapper').forEach((modal) => {
+      if (modal !== this.modal) {
+        modal.classList.remove('modal-wrapper--active');
+      }
+    });
+  }
+
   hideModalByClickingOutside() {
     document.addEventListener('click', (e) => {
       if (e.target.classList.contains(`${this.modalClass}`)) {
@@ -23,6 +31,7 @@ export class Modal {
 
   enableModalToggling() {
     this.toggle.addEventListener('click', this.showModal.bind(this));
+    this.toggle.addEventListener('click', this.hideOtherModals.bind(this));
     this.hideModalByClickingOutside();
   }
 }

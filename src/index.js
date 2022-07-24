@@ -16,3 +16,6 @@ enableTaskSorting();
 
 const addModal = new Modal('add-modal-toggle', 'add-modal');
 addModal.enableModalToggling();
+
+const taskModal = new Modal('task-modal-toggle', 'task-modal');
+taskModal.enableModalToggling();

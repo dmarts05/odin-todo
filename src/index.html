@@ -101,9 +101,30 @@
         <div class="add-modal__items">
           <h2 class="add-modal__title">What do you want to add?</h2>
           <div class="add-modal__buttons">
-            <button class="add-modal__button">Task</button>
-            <button class="add-modal__button">Project</button>
+            <button class="add-modal__button" id="task-modal-toggle">Task</button>
+            <button class="add-modal__button" id="project-modal-toggle">Project</button>
           </div>
+        </div>
+      </div>
+
+      <div class="modal-wrapper task-modal">
+        <div class="task-modal__items">
+          <form action="" class="task-modal__form">
+            <div class="task-modal__form-group">
+              <label class="task-modal__label" for="task-name">Name:</label>
+              <input class="task-modal__text-input" type="text" name="task-name" id="task-name" required>
+            </div>
+            <div class="task-modal__form-group">
+              <input class="task-modal__radio-input" type="radio" name="task-priority" id="task-priority-low" value="task-priority-low" required checked>
+              <label class="task-modal__label" for="task-priority-low">Low</label>
+
+              <input class="task-modal__radio-input" type="radio" name="task-priority" id="task-priority-medium" value="task-priority-medium" required>
+              <label class="task-modal__label" for="task-priority-medium">Medium</label>
+
+              <input class="task-modal__radio-input" type="radio" name="task-priority" id="task-priority-high" value="task-priority-high" required>
+              <label class="task-modal__label" for="task-priority-high">High</label>
+            </div>
+          </form>
         </div>
       </div>
     </div>
