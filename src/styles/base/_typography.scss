@@ -24,8 +24,10 @@ span {
   font-size: clamp(a.rem(12), 10px + 1vw, a.rem(20));
 }
 
-input[type='date'] {
+input[type='date'],
+select {
   font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+  font-weight: 500;
 }
 
 button {

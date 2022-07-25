@@ -24,6 +24,12 @@
     display: flex;
     flex-direction: column;
     gap: a.rem(24);
+
+    input[type='text'],
+    select,
+    input[type='date'] {
+      flex: 1;
+    }
   }
 
   &__form-group {
@@ -36,13 +42,7 @@
     }
   }
 
-  &__form-group:first-child {
-    input[type='text'] {
-      flex: 1;
-    }
-
-    @include a.breakpoint-min('m') {
-      gap: a.rem(26);
-    }
+  &__form-submit {
+    border-top: a.rem(2) solid var(--text-color-1);
   }
 }

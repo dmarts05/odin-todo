@@ -1,0 +1,15 @@
+@use '../abstracts' as a;
+
+select {
+  padding: a.rem(4) a.rem(8);
+  border: a.rem(2) solid var(--text-color-1);
+  border-radius: a.rem(10);
+  outline: none;
+  background-color: var(--text-color-1);
+  transition: color 0.15s, background-color 0.15s;
+
+  &:focus {
+    color: var(--text-color-1);
+    background-color: var(--background-color-1);
+  }
+}
