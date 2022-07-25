@@ -36,13 +36,13 @@ button {
 }
 
 i {
-  font-size: clamp(a.rem(18), 14px + 1.25vw, a.rem(28));
+  font-size: clamp(a.rem(18), 14px + 1.25vw, a.rem(22));
 
   &.fa-house {
-    font-size: clamp(a.rem(15), 10px + 1.25vw, a.rem(28));
+    font-size: clamp(a.rem(15), 10px + 1.25vw, a.rem(22));
   }
 
   &.project-view__task__icon {
-    font-size: clamp(a.rem(15), 10px + 1.25vw, a.rem(28));
+    font-size: clamp(a.rem(15), 10px + 1.25vw, a.rem(22));
   }
 }
