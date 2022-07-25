@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     gap: a.rem(24);
-    padding: a.rem(32);
+    padding: a.rem(24);
     border-radius: a.rem(10);
     background-color: var(--background-color-1);
     box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
@@ -42,7 +42,26 @@
     }
   }
 
+  &__priority {
+    @include a.breakpoint-max('m') {
+      display: grid;
+      place-content: center;
+      grid-template: 1fr 1fr / 1fr 1fr;
+
+      span {
+        grid-column: 1 / -1;
+        text-align: center;
+      }
+
+      label {
+        text-align: center;
+      }
+    }
+  }
+
   &__form-submit {
+    @include a.flex-center('row');
+    padding-top: a.rem(24);
     border-top: a.rem(2) solid var(--text-color-1);
   }
 }
