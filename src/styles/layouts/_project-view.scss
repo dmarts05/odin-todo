@@ -57,5 +57,9 @@
       align-items: center;
       gap: a.rem(16);
     }
+
+    &__grip {
+      cursor: move;
+    }
   }
 }

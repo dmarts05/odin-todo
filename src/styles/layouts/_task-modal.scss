@@ -1,0 +1,48 @@
+@use '../abstracts' as a;
+
+.task-modal {
+  &__items {
+    max-width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: a.rem(24);
+    padding: a.rem(32);
+    border-radius: a.rem(10);
+    background-color: var(--background-color-1);
+    box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
+  }
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    line-height: a.rem(32);
+    padding-bottom: a.rem(16);
+    border-bottom: a.rem(2) solid var(--text-color-1);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: a.rem(24);
+  }
+
+  &__form-group {
+    display: flex;
+    align-items: center;
+    gap: a.rem(16);
+
+    @include a.breakpoint-max('m') {
+      flex-direction: column;
+    }
+  }
+
+  &__form-group:first-child {
+    input[type='text'] {
+      flex: 1;
+    }
+
+    @include a.breakpoint-min('m') {
+      gap: a.rem(26);
+    }
+  }
+}
