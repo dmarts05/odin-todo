@@ -1,6 +1,7 @@
 @use '../abstracts' as a;
 
-input[type='text'] {
+input[type='text'],
+.task-modal__text-input {
   padding: a.rem(4) a.rem(8);
   border: a.rem(2) solid var(--text-color-1);
   border-radius: a.rem(10);
