@@ -6,6 +6,7 @@ function enableTaskSorting() {
   new Sortable(tasks, {
     handle: '.project-view__task__grip',
     animation: 150,
+    dragClass: 'hide',
   });
 }
 
