@@ -59,7 +59,7 @@
     }
   }
 
-  &__form-submit {
+  &__submit {
     @include a.flex-center('row');
     padding-top: a.rem(24);
     border-top: a.rem(2) solid var(--text-color-1);
