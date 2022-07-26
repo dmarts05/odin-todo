@@ -109,7 +109,7 @@
 
       <div class="modal-wrapper task-modal">
         <div class="task-modal__items">
-          <h2 class="add-modal__title">Add task</h2>
+          <h2 class="task-modal__title">Add task</h2>
           <form action="" class="task-modal__form">
             <div class="task-modal__form-group">
               <label class="task-modal__label" for="task-name">Name:</label>
@@ -146,6 +146,27 @@
 
             <div class="task-modal__form-group task-modal__submit">
               <button class="task-modal__button" id="submit-task">Add task</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-wrapper project-modal">
+        <div class="project-modal__items">
+          <h2 class="project-modal__title">Add project</h2>
+          <form action="" class="project-modal__form">
+            <div class="project-modal__form-group">
+              <label class="project-modal__label" for="project-name">Name:</label>
+              <input class="project-modal__text-input" type="text" name="project-name" id="project-name" required>
+            </div>
+
+            <div class="project-modal__form-group project-modal__color">
+              <label class="project-modal__label" for="project-color">Color:</label>
+              <input type="color" name="project-color" id="project-color" value="#f6f6f6" required>
+            </div>
+
+            <div class="project-modal__form-group project-modal__submit">
+              <button class="project-modal__button" id="submit-project">Add project</button>
             </div>
           </form>
         </div>

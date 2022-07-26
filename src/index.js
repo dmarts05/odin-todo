@@ -19,3 +19,6 @@ addModal.enableModalToggling();
 
 const taskModal = new Modal('task-modal-toggle', 'task-modal');
 taskModal.enableModalToggling();
+
+const projectModal = new Modal('project-modal-toggle', 'project-modal');
+projectModal.enableModalToggling();

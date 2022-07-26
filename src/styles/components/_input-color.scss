@@ -1,0 +1,19 @@
+@use '../abstracts' as a;
+
+input[type='color'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: a.rem(60);
+  height: a.rem(60);
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+
+  @include a.breakpoint-min('m') {
+    width: auto;
+    height: a.rem(34);
+    flex: 1;
+    border-radius: a.rem(10);
+  }
+}
