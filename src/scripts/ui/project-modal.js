@@ -5,7 +5,7 @@ export class ProjectModal extends Modal {
     super(toggleId, modalClass);
   }
 
-  getModalStructure() {
+  createModalStructure() {
     const modalStructure = document.createElement('div');
     modalStructure.classList.add('modal-wrapper', `${this.modalClass}`);
 

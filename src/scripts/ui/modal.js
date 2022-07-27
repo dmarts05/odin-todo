@@ -2,7 +2,7 @@ export class Modal {
   constructor(toggleId, modalClass) {
     this.modalClass = modalClass;
 
-    this.injectModalToHTML(this.getModalStructure());
+    this.injectModalToHTML(this.createModalStructure());
 
     this.toggle = document.getElementById(`${toggleId}`);
     this.modal = document.getElementsByClassName(`${this.modalClass}`)[0];
@@ -10,7 +10,7 @@ export class Modal {
     this.enableModalToggling();
   }
 
-  getModalStructure() {
+  createModalStructure() {
     const modalStructure = document.createElement('div');
     modalStructure.classList.add('modal-wrapper', `${this.modalClass}`);
 
