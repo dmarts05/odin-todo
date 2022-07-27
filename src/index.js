@@ -6,7 +6,9 @@ import {
 } from './scripts/ui/sidebar-toggle.js';
 import enableProjectSorting from './scripts/ui/sort-projects';
 import enableTaskSorting from './scripts/ui/sort-tasks';
-import { Modal } from './scripts/ui/modal';
+import { AddModal } from './scripts/ui/add-modal';
+import { TaskModal } from './scripts/ui/task-modal';
+import { ProjectModal } from './scripts/ui/project-modal';
 
 fixVhOnMobile();
 enableSidebarToggling();
@@ -14,11 +16,8 @@ showSidebarAtWidth(700);
 enableProjectSorting();
 enableTaskSorting();
 
-const addModal = new Modal('add-modal-toggle', 'add-modal');
-addModal.enableModalToggling();
+const addModal = new AddModal('add-modal-toggle', 'add-modal');
 
-const taskModal = new Modal('task-modal-toggle', 'task-modal');
-taskModal.enableModalToggling();
+const taskModal = new TaskModal('task-modal-toggle', 'task-modal');
 
-const projectModal = new Modal('project-modal-toggle', 'project-modal');
-projectModal.enableModalToggling();
+const projectModal = new ProjectModal('project-modal-toggle', 'project-modal');

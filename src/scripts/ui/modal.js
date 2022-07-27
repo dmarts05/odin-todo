@@ -1,8 +1,25 @@
 export class Modal {
   constructor(toggleId, modalClass) {
-    this.toggle = document.getElementById(`${toggleId}`);
-    this.modal = document.getElementsByClassName(`${modalClass}`)[0];
     this.modalClass = modalClass;
+
+    this.injectModalToHTML(this.getModalStructure());
+
+    this.toggle = document.getElementById(`${toggleId}`);
+    this.modal = document.getElementsByClassName(`${this.modalClass}`)[0];
+
+    this.enableModalToggling();
+  }
+
+  getModalStructure() {
+    const modalStructure = document.createElement('div');
+    modalStructure.classList.add('modal-wrapper', `${this.modalClass}`);
+
+    return modalStructure;
+  }
+
+  injectModalToHTML(modalStructure) {
+    const wrapper = document.querySelector('body');
+    wrapper.appendChild(modalStructure);
   }
 
   hideModal() {
@@ -30,8 +47,12 @@ export class Modal {
   }
 
   enableModalToggling() {
-    this.toggle.addEventListener('click', this.showModal.bind(this));
-    this.toggle.addEventListener('click', this.hideOtherModals.bind(this));
+    this.toggle.addEventListener('click', () => {
+      this.showModal();
+    });
+    this.toggle.addEventListener('click', () => {
+      this.hideOtherModals();
+    });
     this.hideModalByClickingOutside();
   }
 }
