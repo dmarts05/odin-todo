@@ -87,18 +87,21 @@
   }
 
   &__project-name {
-    width: a.rem(75);
     text-transform: uppercase;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+
+    @include a.breakpoint-max('m') {
+      width: a.rem(75);
+    }
   }
 
   &__project-count {
     position: absolute;
-    top: 16%;
-    left: 26%;
-    font-size: 0.75rem;
+    top: 13%;
+    left: 23%;
+    font-size: 0.85rem;
     text-align: center;
     color: var(--background-color-2);
   }
