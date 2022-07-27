@@ -5,6 +5,7 @@ function enableProjectSorting() {
 
   new Sortable(projects, {
     animation: 150,
+    dragClass: 'hide',
   });
 }
 
