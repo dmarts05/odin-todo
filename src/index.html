@@ -37,23 +37,56 @@
         </div>
       </header>
       <aside class="sidebar">
+        <ul class="sidebar__default-projects">
+          <li class="sidebar__project">
+            <div class="sidebar__project__left">
+              <i class="sidebar__icon fa-solid fa-inbox"></i>
+              <p class="sidebar__project-name">Inbox</p>
+            </div>
+            <div class="sidebar__project__right">
+              <p class="sidebar__project-count">0</p>
+            </div>
+          </li>
+          <li class="sidebar__project">
+            <div class="sidebar__project__left">
+              <i class="sidebar__icon fa-solid fa-calendar-day"></i>
+              <p class="sidebar__project-name">Today</p>
+            </div>
+            <div class="sidebar__project__right">
+              <p class="sidebar__project-count">0</p>
+            </div>
+          </li>
+          <li class="sidebar__project">
+            <div class="sidebar__project__left">
+              <i class="sidebar__icon fa-solid fa-list-check"></i>
+              <p class="sidebar__project-name">All</p>
+            </div>
+            <div class="sidebar__project__right">
+              <p class="sidebar__project-count">2</p>
+            </div>
+          </li>
+        </ul>
+        <div class="sidebar__divider"></div>
         <ul class="sidebar__projects">
-          <li class="sidebar__project">
-            <i class="sidebar__icon fa-solid fa-inbox blue"></i>
-            <span class="sidebar__project-name">Inbox</span>
-          </li>
-          <li class="sidebar__project">
-            <i class="sidebar__icon fa-solid fa-calendar-day green"></i>
-            <span class="sidebar__project-name">Today</span>
-          </li>
-          <li class="sidebar__project">
-            <i class="sidebar__icon fa-solid fa-list-check purple"></i>
-            <span class="sidebar__project-name">All</span>
-          </li>
           <li class="sidebar__project sidebar__project--active">
-            <i class="sidebar__icon fa-solid fa-circle red"></i>
-            <span class="sidebar__project-name">Default</span>
+            <div class="sidebar__project__left">
+              <i class="sidebar__icon fa-solid fa-circle"></i>
+              <p class="sidebar__project-name">Default</p>
+            </div>
+            <div class="sidebar__project__right">
+              <p class="sidebar__project-count">2</p>
+            </div>
           </li>
+          <li class="sidebar__project">
+            <div class="sidebar__project__left">
+              <i class="sidebar__icon fa-solid fa-circle"></i>
+              <p class="sidebar__project-name">Welcome!</p>
+            </div>
+            <div class="sidebar__project__right">
+              <p class="sidebar__project-count">0</p>
+            </div>
+          </li>
+        </ul>
       </aside>
       <main class="project-view">
         <div class="project-view__project">

@@ -7,7 +7,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: a.rem(16) 0;
+  gap: a.rem(16);
+  padding: a.rem(26) 0;
   background-color: var(--background-color-2);
   box-shadow: rgba(0, 0, 0, 0.01) 10px 10px 0px, rgba(0, 0, 0, 0.03) 6px 6px 0px;
   transform: translateX(-100%);
@@ -21,37 +22,84 @@
     transform: translateX(0);
   }
 
+  &__divider {
+    width: 80%;
+    height: a.rem(4);
+    border-radius: a.rem(10);
+    background-color: var(--background-color-1);
+  }
+
+  &__default-projects,
   &__projects {
     display: flex;
     flex-direction: column;
     gap: a.rem(8);
+    width: 80%;
   }
 
   &__project {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: a.rem(16);
-    padding: a.rem(8) min(a.rem(45), 5vw);
-    border-radius: a.rem(8);
+    padding: a.rem(8);
+    border-radius: a.rem(10);
     transition: background-color 0.15s, transform 0.15s;
     cursor: pointer;
 
     &:hover,
     &--active {
+      flex-wrap: wrap;
       color: var(--text-color-2);
       background-color: var(--background-color-1);
+
+      .sidebar__project__right {
+        opacity: 1;
+      }
+
+      .sidebar__project-name {
+        width: auto;
+      }
     }
 
     &:active {
       transform: scale(0.8);
     }
-  }
 
-  &__project-name {
-    text-transform: uppercase;
+    &__left,
+    &__right {
+      @include a.flex-center(row);
+      gap: a.rem(8);
+    }
+
+    &__right {
+      position: relative;
+      opacity: 0;
+      width: a.rem(17.5);
+      height: a.rem(17.5);
+      border-radius: 50%;
+      background-color: var(--text-color-2);
+      transition: opacity 0.15s;
+    }
   }
 
   &__icon {
     transform: scale(0.75);
+  }
+
+  &__project-name {
+    width: a.rem(75);
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__project-count {
+    position: absolute;
+    top: 16%;
+    left: 26%;
+    font-size: 0.75rem;
+    text-align: center;
+    color: var(--background-color-2);
   }
 }
