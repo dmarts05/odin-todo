@@ -9,6 +9,16 @@ input[type='color'] {
   border: none;
   border-radius: 50%;
   outline: none;
+  overflow: hidden;
+
+  @include a.breakpoint-max('m') {
+    &::-webkit-color-swatch,
+    &::-webkit-color-swatch-wrapper {
+      border: none;
+      border-radius: 50%;
+      padding: 0;
+    }
+  }
 
   @include a.breakpoint-min('m') {
     width: auto;
