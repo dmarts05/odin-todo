@@ -8,6 +8,7 @@
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   background-color: var(--background-color-3);
+  overflow: hidden;
 
   @include a.breakpoint-min('m') {
     grid-template-columns: a.rem(300) 1fr;
