@@ -9,11 +9,11 @@ export class AddModal extends Modal {
     const modalStructure = document.createElement('div');
     modalStructure.classList.add('modal-wrapper', `${this.modalClass}`);
 
-    modalStructure.innerHTML = `<div class="add-modal__items">
-      <h2 class="add-modal__title">What do you want to add?</h2>
-      <div class="add-modal__buttons">
-        <button class="add-modal__button" id="task-modal-toggle">Task</button>
-        <button class="add-modal__button" id="project-modal-toggle">Project</button>
+    modalStructure.innerHTML = `<div class="${this.modalClass}__items">
+      <h2 class="${this.modalClass}__title">What do you want to add?</h2>
+      <div class="${this.modalClass}__buttons">
+        <button class="${this.modalClass}__button" id="task-modal-toggle">Task</button>
+        <button class="${this.modalClass}__button" id="project-modal-toggle">Project</button>
       </div>
     </div>`;
 

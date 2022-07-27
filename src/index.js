@@ -10,14 +10,14 @@ import { AddModal } from './scripts/ui/add-modal';
 import { TaskModal } from './scripts/ui/task-modal';
 import { ProjectModal } from './scripts/ui/project-modal';
 
+// Enable app basic functionality
 fixVhOnMobile();
 enableSidebarToggling();
 showSidebarAtWidth(700);
 enableProjectSorting();
 enableTaskSorting();
 
+// Create Modals
 const addModal = new AddModal('add-modal-toggle', 'add-modal');
-
 const taskModal = new TaskModal('task-modal-toggle', 'task-modal');
-
 const projectModal = new ProjectModal('project-modal-toggle', 'project-modal');

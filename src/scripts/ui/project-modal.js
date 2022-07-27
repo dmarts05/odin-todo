@@ -9,21 +9,21 @@ export class ProjectModal extends Modal {
     const modalStructure = document.createElement('div');
     modalStructure.classList.add('modal-wrapper', `${this.modalClass}`);
 
-    modalStructure.innerHTML = `<div class="project-modal__items">
-    <h2 class="project-modal__title">Add project</h2>
-    <form action="" class="project-modal__form">
-      <div class="project-modal__form-group">
-        <label class="project-modal__label" for="project-name">Name:</label>
-        <input class="project-modal__text-input" type="text" name="project-name" id="project-name" required>
+    modalStructure.innerHTML = `<div class="${this.modalClass}__items">
+    <h2 class="${this.modalClass}__title">Add project</h2>
+    <form action="" class="${this.modalClass}__form">
+      <div class="${this.modalClass}__form-group">
+        <label class="${this.modalClass}__label" for="project-name">Name:</label>
+        <input class="${this.modalClass}__text-input" type="text" name="project-name" id="project-name" required>
       </div>
 
-      <div class="project-modal__form-group project-modal__color">
-        <label class="project-modal__label" for="project-color">Color:</label>
+      <div class="${this.modalClass}__form-group ${this.modalClass}__color">
+        <label class="${this.modalClass}__label" for="project-color">Color:</label>
         <input type="color" name="project-color" id="project-color" value="#f6f6f6" required>
       </div>
 
-      <div class="project-modal__form-group project-modal__submit">
-        <button class="project-modal__button" id="submit-project">Add project</button>
+      <div class="${this.modalClass}__form-group ${this.modalClass}__submit">
+        <button class="${this.modalClass}__button" id="submit-project">Add project</button>
       </div>
     </form>
   </div>`;
