@@ -9,6 +9,16 @@
 
   &--active {
     grid-column: auto;
+
+    .project-view__task__task-name {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+
+      @include a.breakpoint-max('m') {
+        width: a.rem(60);
+      }
+    }
   }
 
   &__header {
