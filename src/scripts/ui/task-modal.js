@@ -1,8 +1,8 @@
 import { Modal } from './modal';
 
 export class TaskModal extends Modal {
-  constructor(toggleId, modalClass) {
-    super(toggleId, modalClass);
+  constructor(toggleClass, modalClass) {
+    super(toggleClass, modalClass);
   }
 
   createModalStructure() {

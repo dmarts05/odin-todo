@@ -1,10 +1,12 @@
 export class Modal {
-  constructor(toggleId, modalClass) {
+  constructor(toggleClass, modalClass) {
     this.modalClass = modalClass;
 
     this.injectModalToHTML(this.createModalStructure());
 
-    this.toggle = document.getElementById(`${toggleId}`);
+    this.toggles = Array.from(
+      document.getElementsByClassName(`${toggleClass}`)
+    );
     this.modal = document.getElementsByClassName(`${this.modalClass}`)[0];
 
     this.enableModalToggling();
@@ -47,12 +49,11 @@ export class Modal {
   }
 
   enableModalToggling() {
-    this.toggle.addEventListener('click', () => {
-      this.showModal();
+    this.toggles.forEach((toggle) => {
+      toggle.addEventListener('click', this.showModal.bind(this));
+      toggle.addEventListener('click', this.hideOtherModals.bind(this));
     });
-    this.toggle.addEventListener('click', () => {
-      this.hideOtherModals();
-    });
+
     this.hideModalByClickingOutside();
   }
 }

@@ -1,4 +1,4 @@
-const sidebarToggle = document.getElementById('sidebar-toggle');
+const sidebarToggle = document.querySelector('.sidebar-toggle');
 const sidebar = document.querySelector('.sidebar');
 const projectView = document.querySelector('.project-view');
 
