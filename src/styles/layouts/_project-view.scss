@@ -9,16 +9,6 @@
 
   &--active {
     grid-column: auto;
-
-    .project-view__task__task-name {
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-
-      @include a.breakpoint-max('m') {
-        width: a.rem(60);
-      }
-    }
   }
 
   &__header {
@@ -70,6 +60,31 @@
 
     &__grip {
       cursor: move;
+    }
+
+    &__due-date {
+      font-size: clamp(a.rem(10), 8px + 1vw, a.rem(18));
+    }
+
+    &__task-name {
+      @include a.breakpoint-max('m') {
+        transition: color 0.15s;
+        cursor: pointer;
+
+        &.compact {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+
+          @include a.breakpoint-max('m') {
+            width: a.rem(80);
+          }
+        }
+
+        &:active {
+          color: var(--background-color-3);
+        }
+      }
     }
   }
 }

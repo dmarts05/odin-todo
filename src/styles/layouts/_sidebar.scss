@@ -55,10 +55,6 @@
       .sidebar__project__right {
         opacity: 1;
       }
-
-      .sidebar__project-name {
-        width: auto;
-      }
     }
 
     &:active {
@@ -93,7 +89,7 @@
     overflow: hidden;
 
     @include a.breakpoint-max('m') {
-      width: a.rem(75);
+      width: a.rem(60);
     }
   }
 
