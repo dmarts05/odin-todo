@@ -1,8 +1,9 @@
 export class Project {
   tasks = [];
 
-  constructor(name) {
+  constructor(name, color) {
     this.name = name;
+    this.color = color;
   }
 
   addTask(task) {
