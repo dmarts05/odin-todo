@@ -6,6 +6,18 @@ export class Project {
     this.color = color;
   }
 
+  get name() {
+    return this.name;
+  }
+
+  get color() {
+    return this.color;
+  }
+
+  get taskCount() {
+    return this.tasks.length;
+  }
+
   addTask(task) {
     this.tasks.push(task);
   }
