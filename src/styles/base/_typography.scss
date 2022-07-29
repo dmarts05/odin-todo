@@ -43,6 +43,6 @@ i {
   }
 
   &.project-view__task__icon {
-    font-size: clamp(a.rem(15), 10px + 1.25vw, a.rem(22));
+    font-size: clamp(a.rem(15), 10px + 1vw, a.rem(22));
   }
 }
