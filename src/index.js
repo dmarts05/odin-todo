@@ -6,7 +6,6 @@ import {
 } from './scripts/ui/sidebar-toggle.js';
 import enableProjectSorting from './scripts/ui/sort-projects';
 import enableTaskSorting from './scripts/ui/sort-tasks';
-import enableCompactTextToggling from './scripts/ui/toggle-compact-text';
 import { AddModal } from './scripts/ui/add-modal';
 import { TaskModal } from './scripts/ui/task-modal';
 import { ProjectModal } from './scripts/ui/project-modal';
@@ -17,7 +16,6 @@ enableSidebarToggling();
 showSidebarAtWidth(700);
 enableProjectSorting();
 enableTaskSorting();
-enableCompactTextToggling(700, ['project-view__task__task-name']);
 
 // Create Modals
 const addModal = new AddModal('add-modal-toggle', 'add-modal');

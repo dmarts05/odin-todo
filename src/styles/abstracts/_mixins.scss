@@ -1,14 +1,16 @@
 @use 'functions' as f;
 
-// 700px, 900px, 1440px
+// 400px, 700px, 900px, 1440px
 $breakpoints-min: (
+  's': f.rem(430),
   'm': f.rem(700),
   'l': f.rem(900),
   'xlarge': f.rem(1440),
 );
 
-// 699.98px, 899.98px, 1439.98px
+// 429.98px, 699.98px, 899.98px, 1439.98px
 $breakpoints-max: (
+  's': f.rem(429.98),
   'm': f.rem(699.98),
   'l': f.rem(899.98),
   'xl': f.rem(1439.98),
