@@ -3,7 +3,7 @@ import fixVhOnMobile from './scripts/ui/vh-fix-mobile';
 import {
   enableSidebarToggling,
   showSidebarAtWidth,
-} from './scripts/ui/sidebar-toggle.js';
+} from './scripts/ui/sidebar-toggling.js';
 import enableProjectSorting from './scripts/ui/sort-projects';
 import enableTaskSorting from './scripts/ui/sort-tasks';
 import { AddModal } from './scripts/ui/add-modal';
