@@ -13,10 +13,15 @@ function changeSidebarToggleIcon() {
 }
 
 function showSidebarAtWidth(showWidth) {
-  window.addEventListener('load', () => {
+  window.addEventListener('resize', () => {
     const width = window.innerWidth > 0 ? window.innerWidth : screen.width;
 
-    if (width > showWidth && !sidebar.classList.contains('sidebar-active')) {
+    if (width > showWidth && !sidebar.classList.contains('sidebar--active')) {
+      sidebarToggle.click();
+    } else if (
+      width <= showWidth &&
+      sidebar.classList.contains('sidebar--active')
+    ) {
       sidebarToggle.click();
     }
   });
