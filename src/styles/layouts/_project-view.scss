@@ -15,6 +15,11 @@
     }
   }
 
+  .fa-pen,
+  .fa-trash {
+    font-size: clamp(a.rem(15), 10px + 1.25vw, a.rem(18));
+  }
+
   &__header {
     display: flex;
     flex-wrap: wrap;
@@ -64,7 +69,7 @@
       gap: a.rem(16);
     }
 
-    &__options {
+    &__settings {
       display: flex;
       align-items: center;
       gap: a.rem(16);

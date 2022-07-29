@@ -24,4 +24,8 @@
       display: none;
     }
   }
+
+  &__icon.fa-house {
+    font-size: clamp(a.rem(15), 10px + 1.25vw, a.rem(20));
+  }
 }
