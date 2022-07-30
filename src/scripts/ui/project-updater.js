@@ -27,7 +27,7 @@ function removeSidebarProjects() {
   let project = sidebarProjects.lastElementChild;
 
   while (project) {
-    sidebarProjects.remove(project);
+    sidebarProjects.removeChild(project);
     project = sidebarProjects.lastElementChild;
   }
 }

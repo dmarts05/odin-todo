@@ -1,8 +1,12 @@
 import { Modal } from './modal';
+import getCreatedProject from '../logic/project-form-handler';
+import { addProject } from '../logic/project-manager';
+import updateSidebarProjects from './project-updater';
 
 export class ProjectModal extends Modal {
   constructor(toggleClass, modalClass) {
     super(toggleClass, modalClass);
+    this.enableSubmitProject();
   }
 
   createModalStructure() {
@@ -29,5 +33,23 @@ export class ProjectModal extends Modal {
   </div>`;
 
     return modalStructure;
+  }
+
+  enableSubmitProject() {
+    const submitProjectBtn = document.getElementById('submit-project');
+    const projectForm = document.querySelector('.project-modal__form');
+
+    submitProjectBtn.addEventListener('click', (e) => {
+      // Check form without submitting it
+      e.preventDefault();
+      projectForm.reportValidity();
+
+      if (projectForm.checkValidity()) {
+        const project = getCreatedProject();
+        addProject(project);
+        updateSidebarProjects();
+        super.hideModal();
+      }
+    });
   }
 }

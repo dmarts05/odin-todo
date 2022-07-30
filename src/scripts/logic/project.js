@@ -6,12 +6,26 @@ export class Project {
     this.color = color;
   }
 
+  set name(projectName) {
+    projectName = projectName.trim();
+
+    if (projectName === '') {
+      throw 'Project name cannot be empty';
+    }
+
+    this._name = projectName;
+  }
+
+  set color(projectColor) {
+    this._color = projectColor;
+  }
+
   get name() {
-    return this.name;
+    return this._name;
   }
 
   get color() {
-    return this.color;
+    return this._color;
   }
 
   get taskCount() {
