@@ -50,4 +50,8 @@ export class Project {
   removeTask(task) {
     this.tasks = this.tasks.filter((arrTask) => arrTask !== task);
   }
+
+  getTask(taskId) {
+    return this.tasks.find((task) => task.id === taskId);
+  }
 }

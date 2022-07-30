@@ -1,4 +1,5 @@
 import { getProjects } from '../logic/project-manager';
+import enableProjectSwitching from './project-switching';
 
 const sidebarProjects = document.querySelector('.sidebar__projects');
 
@@ -39,6 +40,8 @@ function updateSidebarProjects() {
 
     sidebarProjects.appendChild(projectStructure);
   });
+
+  enableProjectSwitching();
 }
 
 export default updateSidebarProjects;

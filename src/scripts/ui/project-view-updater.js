@@ -1,5 +1,23 @@
 import { getProject } from '../logic/project-manager';
 
+function toggleTaskCheckedStatus(e) {
+  const activeProject = getProject(
+    document.querySelector('.sidebar__project--active').dataset.projectId
+  );
+
+  const task = activeProject.getTask(
+    e.target.closest('.project-view__task').dataset.taskId
+  );
+
+  task.toggleChecked();
+
+  const taskName = e.target.parentNode.parentNode.querySelector(
+    '.project-view__task__task-name'
+  );
+
+  taskName.classList.toggle('line-through');
+}
+
 function createProjectViewTaskStructure(task) {
   const taskStructure = document.createElement('div');
   taskStructure.classList.add('project-view__task');
@@ -60,6 +78,14 @@ function updateProjectViewTasks(projectId) {
       projectViewTasks.appendChild(createProjectViewTaskStructure(task))
     );
   }
+
+  // Add event listener that toggles checked status for every task
+  const tasksCheckBoxes = document.querySelectorAll(
+    '.project-view__task__check'
+  );
+  tasksCheckBoxes.forEach((taskCheckBox) => {
+    taskCheckBox.addEventListener('click', toggleTaskCheckedStatus);
+  });
 }
 
 function updateProjectViewTitle(projectId) {
