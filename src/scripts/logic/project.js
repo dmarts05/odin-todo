@@ -10,7 +10,7 @@ export class Project {
   }
 
   set name(projectName) {
-    projectName = projectName.trim();
+    projectName = projectName.trim().toUpperCase();
 
     if (projectName === '') {
       throw 'Project name cannot be empty';
@@ -29,6 +29,10 @@ export class Project {
 
   get color() {
     return this._color;
+  }
+
+  get tasks() {
+    return this._tasks;
   }
 
   get taskCount() {

@@ -1,7 +1,9 @@
 import { Modal } from './modal';
 import getCreatedProject from '../logic/project-form-handler';
 import { addProject } from '../logic/project-manager';
-import updateSidebarProjects from './project-updater';
+import updateSidebarProjects from './sidebar-projects-updater';
+import updateTaskFormProjects from './task-form-projects-updater';
+import enableProjectSwitching from './project-switching';
 
 export class ProjectModal extends Modal {
   constructor(toggleClass, modalClass) {
@@ -48,6 +50,8 @@ export class ProjectModal extends Modal {
         const project = getCreatedProject();
         addProject(project);
         updateSidebarProjects();
+        updateTaskFormProjects();
+        enableProjectSwitching();
         super.hideModal();
       }
     });

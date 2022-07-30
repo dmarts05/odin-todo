@@ -2,23 +2,18 @@ import { getProjects } from '../logic/project-manager';
 
 const sidebarProjects = document.querySelector('.sidebar__projects');
 
-function createSidebarProjectStructure(
-  projectName,
-  projectColor,
-  projectTaskCount,
-  projectId
-) {
+function createSidebarProjectStructure(project) {
   const projectStructure = document.createElement('li');
   projectStructure.classList.add('sidebar__project');
-  projectStructure.dataset.projectId = projectId;
+  projectStructure.dataset.projectId = project.id;
 
   projectStructure.innerHTML = `
   <div class="sidebar__project__left">
-    <i class="sidebar__icon fa-solid fa-circle" style ="color: ${projectColor}"></i>
-    <p class="sidebar__project-name">${projectName}</p>
+    <i class="sidebar__icon fa-solid fa-circle" style ="color: ${project.color}"></i>
+    <p class="sidebar__project-name">${project.name}</p>
   </div>
   <div class="sidebar__project__right">
-    <p class="sidebar__project-count">${projectTaskCount}</p>
+    <p class="sidebar__project-count">${project.taskCount}</p>
   </div>
   `;
 
@@ -40,12 +35,7 @@ function updateSidebarProjects() {
   removeSidebarProjects();
 
   projects.forEach((project) => {
-    const projectStructure = createSidebarProjectStructure(
-      project.name,
-      project.color,
-      project.taskCount,
-      project.id
-    );
+    const projectStructure = createSidebarProjectStructure(project);
 
     sidebarProjects.appendChild(projectStructure);
   });

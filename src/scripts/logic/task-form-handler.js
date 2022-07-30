@@ -4,7 +4,7 @@ function getTaskName() {
   return document.getElementById('task-name').value;
 }
 
-function getTaskProject() {
+function getTaskProjectId() {
   return document.getElementById('task-project').value;
 }
 
@@ -13,16 +13,13 @@ function getTaskDueDate() {
 }
 
 function getTaskPriority() {
-  return document.getElementById('task-priority').value;
+  return document.querySelector(
+    'input[type="radio"][name="task-priority"]:checked'
+  ).value;
 }
 
 function getCreatedTask() {
-  return new Task(
-    getTaskName(),
-    getTaskProject(),
-    getTaskDueDate(),
-    getTaskPriority()
-  );
+  return new Task(getTaskName(), getTaskDueDate(), getTaskPriority());
 }
 
-export default getCreatedTask;
+export { getTaskProjectId, getCreatedTask };
