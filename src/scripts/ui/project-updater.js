@@ -5,10 +5,12 @@ const sidebarProjects = document.querySelector('.sidebar__projects');
 function createSidebarProjectStructure(
   projectName,
   projectColor,
-  projectTaskCount
+  projectTaskCount,
+  projectId
 ) {
   const projectStructure = document.createElement('li');
   projectStructure.classList.add('sidebar__project');
+  projectStructure.dataset.projectId = projectId;
 
   projectStructure.innerHTML = `
   <div class="sidebar__project__left">
@@ -41,7 +43,8 @@ function updateSidebarProjects() {
     const projectStructure = createSidebarProjectStructure(
       project.name,
       project.color,
-      project.taskCount
+      project.taskCount,
+      project.id
     );
 
     sidebarProjects.appendChild(projectStructure);

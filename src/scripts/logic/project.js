@@ -1,5 +1,8 @@
+import generateId from '../utils/id-generator';
+
 export class Project {
   tasks = [];
+  id = generateId();
 
   constructor(name, color) {
     this.name = name;
@@ -30,6 +33,10 @@ export class Project {
 
   get taskCount() {
     return this.tasks.length;
+  }
+
+  get id() {
+    return this._id;
   }
 
   addTask(task) {
