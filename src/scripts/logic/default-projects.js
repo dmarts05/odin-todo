@@ -5,9 +5,11 @@ const inbox = new Project('INBOX', '#f6f6f6');
 inbox.id = 'inbox';
 
 const today = new Project('TODAY', '#f6f6f6');
+today.id = 'today';
 today.canAddTasks = false;
 
 const all = new Project('ALL', '#f6f6f6');
+all.id = 'all';
 all.canAddTasks = false;
 
 const defaultProjects = [inbox, today, all];

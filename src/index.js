@@ -16,6 +16,7 @@ import { ProjectModal } from './scripts/ui/project-modal';
 import addDefaultProjects from './scripts/logic/default-projects';
 import enableHomeProjectBtn from './scripts/ui/home-project-btn';
 import updateSidebarProjects from './scripts/ui/sidebar-projects-updater';
+import updateTaskFormProjects from './scripts/ui/task-form-projects-updater';
 
 // Enable app basic functionality
 fixVhOnMobile();
@@ -24,11 +25,10 @@ showSidebarAtWidth(700);
 enableProjectSorting();
 enableTaskSorting();
 addDefaultProjects();
-enableProjectSwitching();
 enableHomeProjectBtn();
 
 // Load app data
-updateSidebarProjects();
+updateSidebarProjects(); // Enables project switching too
 
 // Create Modals
 const addModal = new AddModal('add-modal-toggle', 'add-modal');
