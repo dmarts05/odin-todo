@@ -11,7 +11,7 @@ export class Task {
   }
 
   set name(taskName) {
-    taskName = taskName.trim().toUpperCase();
+    taskName = taskName.trim();
 
     if (taskName === '') {
       throw 'Task name cannot be empty';

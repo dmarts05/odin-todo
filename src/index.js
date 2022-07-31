@@ -6,7 +6,10 @@ import {
 } from './scripts/ui/sidebar-toggling.js';
 import enableProjectSorting from './scripts/ui/sort-projects';
 import enableTaskSorting from './scripts/ui/sort-tasks';
-import { enableProjectSwitching } from './scripts/ui/project-switching';
+import {
+  enableProjectSwitching,
+  switchProject,
+} from './scripts/ui/project-switching';
 import { AddModal } from './scripts/ui/add-modal';
 import { TaskModal } from './scripts/ui/task-modal';
 import { ProjectModal } from './scripts/ui/project-modal';
@@ -29,4 +32,4 @@ const taskModal = new TaskModal('task-modal-toggle', 'task-modal');
 const projectModal = new ProjectModal('project-modal-toggle', 'project-modal');
 
 // Set home project view
-document.querySelector('.home-btn').click();
+switchProject(document.querySelector('.home'));
