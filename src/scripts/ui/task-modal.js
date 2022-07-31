@@ -76,6 +76,7 @@ export class TaskModal extends Modal {
         updateProjectViewTasks(getTaskProjectId());
         updateSidebarProjects();
         super.hideModal();
+        taskForm.reset();
       }
     });
   }

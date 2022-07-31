@@ -81,6 +81,7 @@
 
     &__task-name {
       line-height: a.rem(20);
+      transition: text-decoration 0.15s;
     }
 
     &__due-date {

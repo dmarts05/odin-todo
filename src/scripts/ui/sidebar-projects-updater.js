@@ -40,6 +40,18 @@ function updateSidebarProjects() {
       const projectStructure = createSidebarProjectStructure(project);
 
       sidebarProjects.appendChild(projectStructure);
+    } else {
+      // Update task count of default projects
+      const defaultSidebarProjects = document.querySelectorAll(
+        '.sidebar__default-projects .sidebar__project'
+      );
+      defaultSidebarProjects.forEach((defaultSidebarProject) => {
+        if (defaultSidebarProject.dataset.projectId === project.id) {
+          defaultSidebarProject.querySelector(
+            '.sidebar__project-count'
+          ).textContent = project.taskCount;
+        }
+      });
     }
   });
 

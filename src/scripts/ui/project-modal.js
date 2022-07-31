@@ -51,6 +51,7 @@ export class ProjectModal extends Modal {
         updateSidebarProjects();
         updateTaskFormProjects();
         super.hideModal();
+        projectForm.reset();
       }
     });
   }
