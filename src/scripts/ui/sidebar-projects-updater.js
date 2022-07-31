@@ -36,9 +36,11 @@ function updateSidebarProjects() {
   removeSidebarProjects();
 
   projects.forEach((project) => {
-    const projectStructure = createSidebarProjectStructure(project);
+    if (project.canAddTasks && project.id !== 'inbox') {
+      const projectStructure = createSidebarProjectStructure(project);
 
-    sidebarProjects.appendChild(projectStructure);
+      sidebarProjects.appendChild(projectStructure);
+    }
   });
 
   enableProjectSwitching();
