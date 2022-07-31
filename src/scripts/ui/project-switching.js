@@ -3,12 +3,10 @@ import {
   updateProjectViewTitle,
 } from './project-view-updater';
 
-function autoToggleSidebarSwitchingProject(e, autoSwitchWidth) {
+function autoToggleSidebarSwitchingProject(sidebarProject, autoSwitchWidth) {
   const width = window.innerWidth > 0 ? window.innerWidth : screen.width;
 
   if (width <= autoSwitchWidth) {
-    const sidebarProject = e.target.closest('.sidebar__project');
-
     if (sidebarProject.classList.contains('sidebar__project')) {
       document.querySelector('.sidebar-toggle').click();
     }
@@ -25,9 +23,7 @@ function removeSidebarProjectsActiveClass() {
   });
 }
 
-function switchProject(e) {
-  const sidebarProject = e.target.closest('.sidebar__project');
-
+function switchProject(sidebarProject) {
   if (sidebarProject.classList.contains('sidebar__project')) {
     removeSidebarProjectsActiveClass();
     sidebarProject.classList.add('sidebar__project--active');
@@ -44,11 +40,16 @@ function enableProjectSwitching() {
   );
 
   sidebarProjects.forEach((sidebarProject) => {
-    sidebarProject.addEventListener('click', switchProject);
     sidebarProject.addEventListener('click', (e) => {
-      autoToggleSidebarSwitchingProject(e, 700);
+      switchProject(e.target.closest('.sidebar__project'));
+    });
+    sidebarProject.addEventListener('click', (e) => {
+      autoToggleSidebarSwitchingProject(
+        e.target.closest('.sidebar__project'),
+        700
+      );
     });
   });
 }
 
-export default enableProjectSwitching;
+export { enableProjectSwitching, switchProject };

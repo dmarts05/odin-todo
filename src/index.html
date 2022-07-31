@@ -25,7 +25,7 @@
       <header class="header">
         <div class="header__left">
           <i class="header__icon fa-solid fa-angles-right sidebar-toggle"></i>
-          <i class="header__icon fa-solid fa-house"></i>
+          <i class="header__icon fa-solid fa-house home-btn"></i>
         </div>
         <div class="header__center">
           <img src="./img/logo.png" alt="Logo" class="header__logo" />
@@ -38,31 +38,34 @@
       </header>
       <aside class="sidebar">
         <ul class="sidebar__default-projects">
-          <li class="sidebar__project sidebar__project--active">
+          <li
+            class="sidebar__project sidebar__project--active home"
+            data-project-id="inbox"
+          >
             <div class="sidebar__project__left">
               <i class="sidebar__icon fa-solid fa-inbox"></i>
               <p class="sidebar__project-name">Inbox</p>
             </div>
             <div class="sidebar__project__right">
-              <p class="sidebar__project-count">2</p>
+              <p class="sidebar__project-count"></p>
             </div>
           </li>
-          <li class="sidebar__project">
+          <li class="sidebar__project" data-project-id="today">
             <div class="sidebar__project__left">
               <i class="sidebar__icon fa-solid fa-calendar-day"></i>
               <p class="sidebar__project-name">Today</p>
             </div>
             <div class="sidebar__project__right">
-              <p class="sidebar__project-count">0</p>
+              <p class="sidebar__project-count"></p>
             </div>
           </li>
-          <li class="sidebar__project">
+          <li class="sidebar__project" data-project-id="all">
             <div class="sidebar__project__left">
               <i class="sidebar__icon fa-solid fa-list-check"></i>
               <p class="sidebar__project-name">All</p>
             </div>
             <div class="sidebar__project__right">
-              <p class="sidebar__project-count">2</p>
+              <p class="sidebar__project-count"></p>
             </div>
           </li>
         </ul>
@@ -72,7 +75,7 @@
       <main class="project-view">
         <div class="project-view__project">
           <header class="project-view__header">
-            <h2 class="project-view__title">INBOX</h2>
+            <h2 class="project-view__title"></h2>
             <div class="project-view__settings">
               <i class="project-view__icon fa-solid fa-sort"></i>
               <i class="project-view__icon fa-solid fa-pen"></i>
@@ -80,56 +83,7 @@
             </div>
           </header>
         </div>
-        <div class="project-view__tasks">
-          <div class="project-view__task">
-            <div class="project-view__task__top">
-              <i class="project-view__task__grip fa-solid fa-grip-vertical"></i>
-              <div class="check-wrapper">
-                <input
-                  class="project-view__task__check"
-                  type="checkbox"
-                  name="task-check-1"
-                  id="task-check-1"
-                />
-              </div>
-              <p class="project-view__task__task-name compact">
-                Welcome to NextDo!
-              </p>
-            </div>
-            <div class="project-view__task__bottom">
-              <p class="project-view__task__due-date">28/07/2022</p>
-              <div class="project-view__task__settings">
-                <i
-                  class="project-view__task__icon fa-solid fa-pen task-modal-toggle"
-                ></i>
-                <i class="project-view__task__icon fa-solid fa-trash"></i>
-              </div>
-            </div>
-          </div>
-          <div class="project-view__task">
-            <div class="project-view__task__top">
-              <i class="project-view__task__grip fa-solid fa-grip-vertical"></i>
-              <div class="check-wrapper">
-                <input
-                  class="project-view__task__check"
-                  type="checkbox"
-                  name="task-check-1"
-                  id="task-check-1"
-                />
-              </div>
-              <p class="project-view__task__task-name compact">I am a task!</p>
-            </div>
-            <div class="project-view__task__bottom">
-              <p class="project-view__task__due-date">28/07/2022</p>
-              <div class="project-view__task__settings">
-                <i
-                  class="project-view__task__icon fa-solid fa-pen task-modal-toggle"
-                ></i>
-                <i class="project-view__task__icon fa-solid fa-trash"></i>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="project-view__tasks"></div>
       </main>
     </div>
   </body>

@@ -3,6 +3,7 @@ import generateId from '../utils/id-generator';
 export class Project {
   tasks = [];
   id = generateId();
+  canAddTasks = true;
 
   constructor(name, color) {
     this.name = name;
@@ -23,6 +24,10 @@ export class Project {
     this._color = projectColor;
   }
 
+  set canAddTasks(projectCanAddTasks) {
+    this._canAddTasks = projectCanAddTasks;
+  }
+
   get name() {
     return this._name;
   }
@@ -41,6 +46,10 @@ export class Project {
 
   get id() {
     return this._id;
+  }
+
+  get canAddTasks() {
+    return this._canAddTasks;
   }
 
   addTask(task) {

@@ -34,4 +34,11 @@ function enableSidebarToggling() {
   });
 }
 
-export { enableSidebarToggling, showSidebarAtWidth };
+function disableSidebarToggling() {
+  sidebarToggle.removeEventListener('click', () => {
+    toggleSidebar();
+    changeSidebarToggleIcon();
+  });
+}
+
+export { enableSidebarToggling, disableSidebarToggling, showSidebarAtWidth };

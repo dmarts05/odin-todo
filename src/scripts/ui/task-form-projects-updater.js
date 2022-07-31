@@ -17,10 +17,12 @@ function updateTaskFormProjects() {
   removeTaskFormProjects();
 
   projects.forEach((project) => {
-    const projectOption = document.createElement('option');
-    projectOption.value = project.id;
-    projectOption.textContent = project.name;
-    projectSelectInput.appendChild(projectOption);
+    if (project.canAddTasks) {
+      const projectOption = document.createElement('option');
+      projectOption.value = project.id;
+      projectOption.textContent = project.name;
+      projectSelectInput.appendChild(projectOption);
+    }
   });
 }
 
