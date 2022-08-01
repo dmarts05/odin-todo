@@ -66,6 +66,9 @@ function removeProjectViewTasks() {
 }
 
 function updateProjectViewTasks(projectId) {
+  // Start fade transition
+  document.querySelector('.project-view__tasks').classList.add('fade');
+
   const projectViewTasks = document.querySelector('.project-view__tasks');
   const project = getProject(projectId);
 
@@ -89,6 +92,11 @@ function updateProjectViewTasks(projectId) {
   tasksCheckBoxes.forEach((taskCheckBox) => {
     taskCheckBox.addEventListener('click', toggleTaskCheckedStatus);
   });
+
+  setTimeout(() => {
+    // End fade transition
+    document.querySelector('.project-view__tasks').classList.remove('fade');
+  }, 150);
 }
 
 function updateProjectViewHeader(projectId) {
