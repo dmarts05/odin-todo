@@ -10,6 +10,7 @@ function createSidebarProjectStructure(project) {
 
   projectStructure.innerHTML = `
   <div class="sidebar__project__left">
+    <i class="sidebar__project__grip sidebar__icon fa-solid fa-grip-vertical"></i>
     <i class="sidebar__icon fa-solid fa-circle" style ="color: ${project.color}"></i>
     <p class="sidebar__project-name">${project.name}</p>
   </div>
