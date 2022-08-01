@@ -46,7 +46,7 @@ function createProjectViewTaskStructure(task) {
     <p class="project-view__task__due-date">${task.dueDate}</p>
     <div class="project-view__task__settings">
       <i class="project-view__task__icon fa-solid fa-pen task-modal-toggle"></i>
-      <i class="project-view__task__icon fa-solid fa-trash"></i>
+      <i class="project-view__task__icon fa-solid fa-trash task-remove-btn"></i>
     </div>
   </div>
   `;
