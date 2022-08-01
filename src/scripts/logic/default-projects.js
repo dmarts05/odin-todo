@@ -8,6 +8,8 @@ function updateTodayProjectTasks() {
 
   const todayProjectTasks = [];
 
+  todayProject.tasks = [];
+
   projects.forEach((project) => {
     if (project.canAddTasks) {
       project.tasks.forEach((task) => {
@@ -26,6 +28,8 @@ function updateAllProjectTasks() {
   const projects = getProjects();
 
   const allProjectTasks = [];
+
+  allProject.tasks = [];
 
   projects.forEach((project) => {
     if (project.canAddTasks) {
