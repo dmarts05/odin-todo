@@ -47,4 +47,28 @@ input[type='checkbox'] {
   &:active {
     transform: scale(0.8);
   }
+
+  &.low-priority {
+    border: a.rem(2) solid var(--low-priority);
+
+    &:checked {
+      background: var(--low-priority);
+    }
+  }
+
+  &.medium-priority {
+    border: a.rem(2) solid var(--medium-priority);
+
+    &:checked {
+      background: var(--medium-priority);
+    }
+  }
+
+  &.high-priority {
+    border: a.rem(2) solid var(--high-priority);
+
+    &:checked {
+      background: var(--high-priority);
+    }
+  }
 }

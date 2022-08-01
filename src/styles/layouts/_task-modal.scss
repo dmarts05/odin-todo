@@ -43,6 +43,21 @@
   }
 
   &__priority {
+    label[for='task-priority-low'] {
+      color: var(--text-color-1);
+      background-color: var(--low-priority);
+    }
+
+    label[for='task-priority-medium'] {
+      color: var(--text-color-1);
+      background-color: var(--medium-priority);
+    }
+
+    label[for='task-priority-high'] {
+      color: var(--text-color-1);
+      background-color: var(--high-priority);
+    }
+
     @include a.breakpoint-max('m') {
       display: grid;
       place-content: center;

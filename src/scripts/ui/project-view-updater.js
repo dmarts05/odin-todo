@@ -31,7 +31,7 @@ function createProjectViewTaskStructure(task) {
     <i class="project-view__task__grip fa-solid fa-grip-vertical"></i>
     <div class="check-wrapper">
       <input
-        class="project-view__task__check"
+        class="project-view__task__check ${task.priority}-priority"
         type="checkbox"
         name="task-check-1"
         id="task-check-1"
