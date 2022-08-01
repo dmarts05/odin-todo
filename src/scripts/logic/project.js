@@ -24,6 +24,10 @@ export class Project {
     this._color = projectColor;
   }
 
+  set tasks(projectTasks) {
+    this._tasks = projectTasks;
+  }
+
   set canAddTasks(projectCanAddTasks) {
     this._canAddTasks = projectCanAddTasks;
   }
