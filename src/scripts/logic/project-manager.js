@@ -1,4 +1,4 @@
-const projects = [];
+let projects = [];
 
 function getProject(id) {
   return projects.find((project) => project.id === id);
@@ -18,4 +18,14 @@ function addProject(project) {
   projects.push(project);
 }
 
-export { getProject, getProjects, addProject, getProjectWithTask };
+function removeProject(project) {
+  projects = projects.filter((arrProject) => arrProject !== project);
+}
+
+export {
+  getProject,
+  getProjects,
+  addProject,
+  removeProject,
+  getProjectWithTask,
+};

@@ -19,6 +19,7 @@ import {
 } from './scripts/logic/default-projects';
 import enableHomeProjectBtn from './scripts/ui/home-project-btn';
 import updateSidebarProjects from './scripts/ui/sidebar-projects-updater';
+import { enableProjectRemoval } from './scripts/ui/project-settings';
 
 // Enable app basic functionality
 fixVhOnMobile();
@@ -29,6 +30,7 @@ enableTaskSorting();
 addDefaultProjects();
 enableHomeProjectBtn();
 enableDefaultProjectSwitching();
+enableProjectRemoval();
 
 // Load app data
 updateSidebarProjects(); // Enables project switching too
