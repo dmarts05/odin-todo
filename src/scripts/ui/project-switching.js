@@ -1,6 +1,6 @@
 import {
   updateProjectViewTasks,
-  updateProjectViewTitle,
+  updateProjectViewHeader,
 } from './project-view-updater';
 import { enableTaskRemoval } from './task-setttings';
 
@@ -30,7 +30,7 @@ function switchProject(sidebarProject) {
     sidebarProject.classList.add('sidebar__project--active');
 
     const projectId = sidebarProject.dataset.projectId;
-    updateProjectViewTitle(projectId);
+    updateProjectViewHeader(projectId);
     updateProjectViewTasks(projectId);
     enableTaskRemoval();
   }

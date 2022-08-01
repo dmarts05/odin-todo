@@ -1,4 +1,3 @@
-import { getProject } from '../logic/project-manager';
 import updateSidebarProjects from './sidebar-projects-updater';
 import { updateDefaultProjects } from '../logic/default-projects';
 import { updateProjectViewTasks } from './project-view-updater';

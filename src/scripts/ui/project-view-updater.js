@@ -1,4 +1,5 @@
 import { getProject } from '../logic/project-manager';
+import { getDefaultProjectsIds } from '../logic/default-projects';
 
 function toggleTaskCheckedStatus(e) {
   const activeProject = getProject(
@@ -90,11 +91,26 @@ function updateProjectViewTasks(projectId) {
   });
 }
 
-function updateProjectViewTitle(projectId) {
+function updateProjectViewHeader(projectId) {
+  // Check if given projectId points to a default project
+  if (
+    getDefaultProjectsIds().some(
+      (defaultProjectId) => defaultProjectId === projectId
+    )
+  ) {
+    // Disable edit and remove buttons for given project
+    document.querySelector('.project-edit-btn').classList.add('hide');
+    document.querySelector('.project-remove-btn').classList.add('hide');
+  } else {
+    // Enable edit and remove buttons for given project
+    document.querySelector('.project-edit-btn').classList.remove('hide');
+    document.querySelector('.project-remove-btn').classList.remove('hide');
+  }
+
   const projectViewTitle = document.querySelector('.project-view__title');
   const project = getProject(projectId);
 
   projectViewTitle.textContent = project.name;
 }
 
-export { updateProjectViewTasks, updateProjectViewTitle };
+export { updateProjectViewTasks, updateProjectViewHeader };

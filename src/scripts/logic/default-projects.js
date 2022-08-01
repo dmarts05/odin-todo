@@ -2,6 +2,8 @@ import { Project } from './project';
 import { getProject, getProjects, addProject } from './project-manager';
 import getToday from '../utils/today';
 
+const defaultProjects = [];
+
 function updateTodayProjectTasks() {
   const todayProject = getProject('today');
   const projects = getProjects();
@@ -48,18 +50,23 @@ function updateDefaultProjects() {
 function addDefaultProjects() {
   const inbox = new Project('INBOX', '#f6f6f6');
   inbox.id = 'inbox';
+  defaultProjects.push(inbox);
 
   const today = new Project('TODAY', '#f6f6f6');
   today.id = 'today';
   today.canAddTasks = false;
+  defaultProjects.push(today);
 
   const all = new Project('ALL', '#f6f6f6');
   all.id = 'all';
   all.canAddTasks = false;
-
-  const defaultProjects = [inbox, today, all];
+  defaultProjects.push(all);
 
   defaultProjects.forEach((project) => addProject(project));
 }
 
-export { addDefaultProjects, updateDefaultProjects };
+function getDefaultProjectsIds() {
+  return defaultProjects.map((defaultProject) => defaultProject.id);
+}
+
+export { addDefaultProjects, updateDefaultProjects, getDefaultProjectsIds };
