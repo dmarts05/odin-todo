@@ -7,16 +7,18 @@ import {
 import enableProjectSorting from './scripts/ui/sort-projects';
 import enableTaskSorting from './scripts/ui/sort-tasks';
 import {
-  enableProjectSwitching,
   switchProject,
+  enableDefaultProjectSwitching,
 } from './scripts/ui/project-switching';
 import { AddModal } from './scripts/ui/add-modal';
 import { TaskModal } from './scripts/ui/task-modal';
 import { ProjectModal } from './scripts/ui/project-modal';
-import addDefaultProjects from './scripts/logic/default-projects';
+import {
+  addDefaultProjects,
+  updateDefaultProjects,
+} from './scripts/logic/default-projects';
 import enableHomeProjectBtn from './scripts/ui/home-project-btn';
 import updateSidebarProjects from './scripts/ui/sidebar-projects-updater';
-import updateTaskFormProjects from './scripts/ui/task-form-projects-updater';
 
 // Enable app basic functionality
 fixVhOnMobile();
@@ -26,9 +28,11 @@ enableProjectSorting();
 enableTaskSorting();
 addDefaultProjects();
 enableHomeProjectBtn();
+enableDefaultProjectSwitching();
 
 // Load app data
 updateSidebarProjects(); // Enables project switching too
+updateDefaultProjects();
 
 // Create Modals
 const addModal = new AddModal('add-modal-toggle', 'add-modal');

@@ -4,6 +4,7 @@ import { getProject } from '../logic/project-manager';
 import updateTaskFormProjects from './task-form-projects-updater';
 import { updateProjectViewTasks } from './project-view-updater';
 import updateSidebarProjects from './sidebar-projects-updater';
+import { updateDefaultProjects } from '../logic/default-projects';
 
 export class TaskModal extends Modal {
   constructor(toggleClass, modalClass) {
@@ -73,6 +74,7 @@ export class TaskModal extends Modal {
         const task = getCreatedTask();
         const taskProject = getProject(getTaskProjectId());
         taskProject.addTask(task);
+        updateDefaultProjects();
         updateProjectViewTasks(getTaskProjectId());
         updateSidebarProjects();
         super.hideModal();
