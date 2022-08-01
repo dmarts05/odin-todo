@@ -73,9 +73,12 @@ export class TaskModal extends Modal {
       if (taskForm.checkValidity()) {
         const task = getCreatedTask();
         const taskProject = getProject(getTaskProjectId());
+        const activeProjectId = document.querySelector(
+          '.sidebar__project--active'
+        ).dataset.projectId;
         taskProject.addTask(task);
         updateDefaultProjects();
-        updateProjectViewTasks(getTaskProjectId());
+        updateProjectViewTasks(activeProjectId);
         updateSidebarProjects();
         super.hideModal();
         taskForm.reset();

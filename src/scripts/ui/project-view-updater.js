@@ -23,6 +23,7 @@ function createProjectViewTaskStructure(task) {
   taskStructure.classList.add('project-view__task');
   taskStructure.dataset.taskId = task.id;
 
+  const taskLineThrough = task.checked ? 'line-through' : '';
   const taskChecked = task.checked ? 'checked' : '';
 
   taskStructure.innerHTML = `
@@ -37,7 +38,7 @@ function createProjectViewTaskStructure(task) {
         ${taskChecked}
       />
     </div>
-    <p class="project-view__task__task-name compact">
+    <p class="project-view__task__task-name compact ${taskLineThrough}">
       ${task.name}
     </p>
   </div>
@@ -67,11 +68,12 @@ function updateProjectViewTasks(projectId) {
   const projectViewTasks = document.querySelector('.project-view__tasks');
   const project = getProject(projectId);
 
-  // Check if given id is the same as the currently showing project
-  if (
+  let isShowingId =
     document.querySelector('.sidebar__project--active').dataset.projectId ===
-    projectId
-  ) {
+    projectId;
+
+  // Check if given id is the same as the currently showing project
+  if (isShowingId) {
     removeProjectViewTasks();
 
     project.tasks.forEach((task) =>
