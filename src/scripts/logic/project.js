@@ -67,4 +67,28 @@ export class Project {
   getTask(taskId) {
     return this.tasks.find((task) => task.id === taskId);
   }
+
+  sortTasks(sortMethod) {
+    let sortedTasks = [];
+
+    switch (sortMethod) {
+      case 'due-date':
+        break;
+
+      case 'manual':
+        const projectViewTasksIds = Array.from(
+          document.querySelectorAll('.project-view__task')
+        ).map((projectViewTask) => projectViewTask.dataset.taskId);
+
+        projectViewTasksIds.forEach((projectViewTaskId) =>
+          sortedTasks.push(this.getTask(projectViewTaskId))
+        );
+        break;
+      default:
+        sortedTasks = this.tasks;
+        break;
+    }
+
+    this.tasks = sortedTasks;
+  }
 }
