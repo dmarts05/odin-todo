@@ -67,7 +67,7 @@ function removeProjectViewTasks() {
 
 function updateProjectViewTasks(projectId) {
   // Start fade transition
-  document.querySelector('.project-view__tasks').classList.add('fade');
+  document.querySelector('.project-view').classList.add('fade');
 
   const projectViewTasks = document.querySelector('.project-view__tasks');
   const project = getProject(projectId);
@@ -95,7 +95,7 @@ function updateProjectViewTasks(projectId) {
 
   setTimeout(() => {
     // End fade transition
-    document.querySelector('.project-view__tasks').classList.remove('fade');
+    document.querySelector('.project-view').classList.remove('fade');
   }, 150);
 }
 
