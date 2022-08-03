@@ -13,6 +13,7 @@ import {
 import { AddModal } from './scripts/ui/add-modal';
 import { TaskModal } from './scripts/ui/task-modal';
 import { ProjectModal } from './scripts/ui/project-modal';
+import { SortTasksModal } from './scripts/ui/sort-tasks-modal.js';
 import {
   addDefaultProjects,
   updateDefaultProjects,
@@ -40,6 +41,10 @@ updateDefaultProjects();
 const addModal = new AddModal('add-modal-toggle', 'add-modal');
 const taskModal = new TaskModal('task-modal-toggle', 'task-modal');
 const projectModal = new ProjectModal('project-modal-toggle', 'project-modal');
+const sortTasksModal = new SortTasksModal(
+  'tasks-sort-toggle',
+  'sort-tasks-modal'
+);
 
 // Set home project view
 switchProject(document.querySelector('.home'));
