@@ -1,6 +1,6 @@
 import { Project } from './project';
 import { getProject, getProjects, addProject } from './project-manager';
-import getToday from '../utils/today';
+import { isToday } from 'date-fns';
 
 const defaultProjects = [];
 
@@ -15,7 +15,7 @@ function updateTodayProjectTasks() {
   projects.forEach((project) => {
     if (project.canAddTasks) {
       project.tasks.forEach((task) => {
-        if (task.dueDate === getToday()) {
+        if (isToday(task.dueDate)) {
           todayProjectTasks.push(task);
         }
       });
