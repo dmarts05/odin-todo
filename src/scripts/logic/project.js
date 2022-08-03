@@ -1,4 +1,5 @@
 import generateId from '../utils/id-generator';
+import { compareAsc } from 'date-fns';
 
 export class Project {
   tasks = [];
@@ -84,6 +85,12 @@ export class Project {
 
       case 'name':
         sortedTasks = this.tasks.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+
+      case 'due-date':
+        sortedTasks = this.tasks.sort((a, b) =>
+          compareAsc(a.dueDate, b.dueDate)
+        );
         break;
 
       default:

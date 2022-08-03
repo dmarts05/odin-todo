@@ -9,7 +9,7 @@ function getTaskProjectId() {
 }
 
 function getTaskDueDate() {
-  return document.getElementById('task-due-date').value;
+  return document.getElementById('task-due-date').valueAsDate;
 }
 
 function getTaskPriority() {
