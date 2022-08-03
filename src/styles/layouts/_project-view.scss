@@ -55,6 +55,11 @@
     padding-bottom: a.rem(16);
     margin-bottom: a.rem(8);
     border-bottom: a.rem(3) solid var(--background-color-1);
+    transition: opacity 0.15;
+
+    &--checked {
+      opacity: 0.6;
+    }
 
     &__top {
       display: flex;
@@ -84,6 +89,10 @@
     &__task-name {
       line-height: a.rem(20);
       transition: text-decoration 0.15s;
+
+      &--checked {
+        text-decoration: line-through;
+      }
     }
 
     &__due-date {

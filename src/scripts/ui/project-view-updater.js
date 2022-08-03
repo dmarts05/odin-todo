@@ -5,21 +5,22 @@ import formatTaskDate from '../utils/format-task-date';
 import { isPast, isToday } from 'date-fns';
 
 function toggleTaskCheckedStatus(e) {
-  const activeProject = getProject(
-    document.querySelector('.sidebar__project--active').dataset.projectId
-  );
+  const taskWrapper = e.target.parentNode.parentNode.parentNode;
 
-  const task = activeProject.getTask(
-    e.target.closest('.project-view__task').dataset.taskId
-  );
+  const activeProjectId = document.querySelector('.sidebar__project--active')
+    .dataset.projectId;
+  const activeProject = getProject(activeProjectId);
+
+  const task = activeProject.getTask(taskWrapper.dataset.taskId);
 
   task.toggleChecked();
+  activeProject.sortTasks();
+  updateProjectViewTasks(activeProjectId);
 
-  const taskName = e.target.parentNode.parentNode.querySelector(
-    '.project-view__task__task-name'
-  );
+  const taskName = taskWrapper.querySelector('.project-view__task__task-name');
 
-  taskName.classList.toggle('line-through');
+  taskWrapper.classList.toggle('project-view__task--checked');
+  taskName.classList.toggle('project-view__task__task-name--checked');
 }
 
 function createProjectViewTaskStructure(task) {
@@ -27,12 +28,19 @@ function createProjectViewTaskStructure(task) {
   taskStructure.classList.add('project-view__task');
   taskStructure.dataset.taskId = task.id;
 
-  const taskLineThrough = task.checked ? 'line-through' : '';
+  const taskLineThrough = task.checked
+    ? 'project-view__task__task-name--checked'
+    : '';
+  const taskWrapperChecked = task.checked ? 'project-view__task--checked' : '';
   const taskChecked = task.checked ? 'checked' : '';
   const overdue =
     isPast(task.dueDate) && !isToday(task.dueDate) ? 'overdue' : '';
 
   const formattedDate = formatTaskDate(task.dueDate);
+
+  if (taskWrapperChecked) {
+    taskStructure.classList.add(taskWrapperChecked);
+  }
 
   taskStructure.innerHTML = `
   <div class="project-view__task__top">

@@ -131,6 +131,11 @@ export class Project {
         break;
     }
 
+    // Sort between unchecked and checked tasks
+    const checkedTasks = sortedTasks.filter((task) => task.checked);
+    sortedTasks = sortedTasks.filter((task) => !task.checked);
+    Array.prototype.push.apply(sortedTasks, checkedTasks);
+
     this.tasks = sortedTasks;
   }
 }

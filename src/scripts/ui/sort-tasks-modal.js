@@ -7,6 +7,7 @@ export class SortTasksModal extends Modal {
   constructor(toggleClass, modalClass) {
     super(toggleClass, modalClass);
     this.enableSubmitSortMethod();
+    this.updateSelectedSortMethodForm();
   }
 
   createModalStructure() {
@@ -40,6 +41,16 @@ export class SortTasksModal extends Modal {
     return modalStructure;
   }
 
+  updateSelectedSortMethodForm() {
+    const activeProject = getProject(
+      document.querySelector('.sidebar__project--active').dataset.projectId
+    );
+
+    document.getElementById(
+      `sort-method-${activeProject.sortMethod}`
+    ).checked = true;
+  }
+
   enableSubmitSortMethod() {
     const submitSortMethodBtn = document.getElementById('submit-sort-method');
     const sortTasksForm = document.querySelector('.sort-tasks-modal__form');
@@ -60,6 +71,7 @@ export class SortTasksModal extends Modal {
         updateProjectViewTasks(activeProjectId);
         super.hideModal();
         sortTasksForm.reset();
+        this.updateSelectedSortMethodForm();
       }
     });
   }
