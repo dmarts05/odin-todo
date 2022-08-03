@@ -1,4 +1,5 @@
 import Sortable from 'sortablejs/modular/sortable.core.esm.js';
+import { sortProjects } from '../logic/project-manager';
 
 function enableProjectSorting() {
   const projects = document.querySelector('.sidebar__projects');
@@ -9,7 +10,9 @@ function enableProjectSorting() {
     ghotsCLass: 'disable',
     chosenClass: 'disable',
     dragClass: 'disable',
-    onSort: () => {},
+    onEnd: () => {
+      sortProjects('manual');
+    },
   });
 }
 

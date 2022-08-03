@@ -84,6 +84,7 @@ export class Project {
           sortedTasks.push(this.getTask(projectViewTaskId))
         );
         break;
+
       default:
         sortedTasks = this.tasks;
         break;

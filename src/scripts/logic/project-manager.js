@@ -22,10 +22,33 @@ function removeProject(project) {
   projects = projects.filter((arrProject) => arrProject !== project);
 }
 
+function sortProjects(sortMethod) {
+  let sortedProjects = [];
+
+  switch (sortMethod) {
+    case 'manual':
+      const sidebarProjectsIds = Array.from(
+        document.querySelectorAll('.sidebar__project')
+      ).map((sidebarProject) => sidebarProject.dataset.projectId);
+
+      sidebarProjectsIds.forEach((sidebarProjectId) =>
+        sortedProjects.push(getProject(sidebarProjectId))
+      );
+      break;
+
+    default:
+      sortedProjects = projects;
+      break;
+  }
+
+  projects = sortedProjects;
+}
+
 export {
   getProject,
   getProjects,
   addProject,
   removeProject,
   getProjectWithTask,
+  sortProjects,
 };
