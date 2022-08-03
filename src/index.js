@@ -4,8 +4,8 @@ import {
   enableSidebarToggling,
   showSidebarAtWidth,
 } from './scripts/ui/sidebar-toggling.js';
-import enableProjectSorting from './scripts/ui/manual-sort-projects';
-import enableTaskSorting from './scripts/ui/manual-sort-tasks';
+import enableProjectSorting from './scripts/ui/drag-n-drop-sort-projects';
+import enableTaskSorting from './scripts/ui/drag-n-drop-sort-tasks';
 import {
   switchProject,
   enableDefaultProjectSwitching,

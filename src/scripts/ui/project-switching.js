@@ -2,7 +2,6 @@ import {
   updateProjectViewTasks,
   updateProjectViewHeader,
 } from './project-view-updater';
-import { enableTaskRemoval } from './task-settings';
 
 function autoToggleSidebarSwitchingProject(sidebarProject, autoSwitchWidth) {
   const width = window.innerWidth > 0 ? window.innerWidth : screen.width;
@@ -35,7 +34,6 @@ function switchProject(sidebarProject) {
     const projectId = sidebarProject.dataset.projectId;
     updateProjectViewHeader(projectId);
     updateProjectViewTasks(projectId);
-    enableTaskRemoval();
   }
 
   setTimeout(() => {

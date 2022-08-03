@@ -18,8 +18,8 @@ export class SortTasksModal extends Modal {
       <h2 class="${this.modalClass}__title">Select sort method</h2>
       <form action="" class="${this.modalClass}__form">
         <div class="${this.modalClass}__form-group ${this.modalClass}__sort-method">
-          <input class="${this.modalClass}__radio-input" type="radio" name="sort-method" id="sort-method-manual" value="manual" required checked>
-          <label class="${this.modalClass}__label" for="sort-method-manual">Manual</label>
+          <input class="${this.modalClass}__radio-input" type="radio" name="sort-method" id="sort-method-none" value="none" required>
+          <label class="${this.modalClass}__label" for="sort-method-none">None</label>
 
           <input class="${this.modalClass}__radio-input" type="radio" name="sort-method" id="sort-method-name" value="name" required>
           <label class="${this.modalClass}__label" for="sort-method-name">Name</label>
@@ -50,14 +50,13 @@ export class SortTasksModal extends Modal {
         const activeProjectId = document.querySelector(
           '.sidebar__project--active'
         ).dataset.projectId;
+        const activeProject = getProject(activeProjectId);
         const sortMethod = getSortMethod();
 
-        getProject(
-          document.querySelector('.sidebar__project--active').dataset.projectId
-        ).sortTasks(sortMethod);
-
+        activeProject.sortMethod = sortMethod;
         updateProjectViewTasks(activeProjectId);
         super.hideModal();
+        sortTasksForm.reset();
       }
     });
   }

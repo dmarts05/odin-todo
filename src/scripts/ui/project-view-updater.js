@@ -1,5 +1,6 @@
 import { getProject } from '../logic/project-manager';
 import { getDefaultProjectsIds } from '../logic/default-projects';
+import { enableTaskRemoval } from './task-settings';
 
 function toggleTaskCheckedStatus(e) {
   const activeProject = getProject(
@@ -66,9 +67,6 @@ function removeProjectViewTasks() {
 }
 
 function updateProjectViewTasks(projectId) {
-  // Start fade transition
-  document.querySelector('.project-view').classList.add('fade');
-
   const projectViewTasks = document.querySelector('.project-view__tasks');
   const project = getProject(projectId);
 
@@ -78,11 +76,16 @@ function updateProjectViewTasks(projectId) {
 
   // Check if given id is the same as the currently showing project
   if (isShowingId) {
+    // Sort tasks by project's sorting method
+    project.sortTasks();
+
     removeProjectViewTasks();
 
     project.tasks.forEach((task) =>
       projectViewTasks.appendChild(createProjectViewTaskStructure(task))
     );
+
+    enableTaskRemoval();
   }
 
   // Add event listener that toggles checked status for every task
@@ -92,11 +95,6 @@ function updateProjectViewTasks(projectId) {
   tasksCheckBoxes.forEach((taskCheckBox) => {
     taskCheckBox.addEventListener('click', toggleTaskCheckedStatus);
   });
-
-  setTimeout(() => {
-    // End fade transition
-    document.querySelector('.project-view').classList.remove('fade');
-  }, 150);
 }
 
 function updateProjectViewHeader(projectId) {

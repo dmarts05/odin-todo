@@ -5,7 +5,6 @@ import updateTaskFormProjects from './task-form-projects-updater';
 import { updateProjectViewTasks } from './project-view-updater';
 import updateSidebarProjects from './sidebar-projects-updater';
 import { updateDefaultProjects } from '../logic/default-projects';
-import { enableTaskRemoval } from './task-settings';
 
 export class TaskModal extends Modal {
   constructor(toggleClass, modalClass) {
@@ -81,7 +80,6 @@ export class TaskModal extends Modal {
         updateDefaultProjects();
         updateProjectViewTasks(activeProjectId);
         updateSidebarProjects();
-        enableTaskRemoval();
         super.hideModal();
         taskForm.reset();
       }

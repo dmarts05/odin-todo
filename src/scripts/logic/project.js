@@ -2,9 +2,10 @@ import generateId from '../utils/id-generator';
 import { compareAsc } from 'date-fns';
 
 export class Project {
-  tasks = [];
   id = generateId();
+  tasks = [];
   canAddTasks = true;
+  sortMethod = 'none';
 
   constructor(name, color) {
     this.name = name;
@@ -31,6 +32,10 @@ export class Project {
 
   set canAddTasks(projectCanAddTasks) {
     this._canAddTasks = projectCanAddTasks;
+  }
+
+  set sortMethod(projectSortMethod) {
+    this._sortMethod = projectSortMethod;
   }
 
   get name() {
@@ -69,11 +74,11 @@ export class Project {
     return this.tasks.find((task) => task.id === taskId);
   }
 
-  sortTasks(sortMethod) {
+  sortTasks(method) {
     let sortedTasks = [];
 
-    switch (sortMethod) {
-      case 'manual':
+    switch (method || this.sortMethod) {
+      case 'drag-n-drop':
         const projectViewTasksIds = Array.from(
           document.querySelectorAll('.project-view__task')
         ).map((projectViewTask) => projectViewTask.dataset.taskId);
