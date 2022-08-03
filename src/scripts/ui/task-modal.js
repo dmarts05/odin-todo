@@ -11,6 +11,7 @@ export class TaskModal extends Modal {
     super(toggleClass, modalClass);
     updateTaskFormProjects();
     this.enableSubmitTask();
+    this.enableSelectActiveProjectByDefault();
   }
 
   createModalStructure() {
@@ -59,6 +60,23 @@ export class TaskModal extends Modal {
   </div>`;
 
     return modalStructure;
+  }
+
+  enableSelectActiveProjectByDefault() {
+    document
+      .querySelector('.task-modal-toggle')
+      .addEventListener('click', () => {
+        const activeProjectId = document.querySelector(
+          '.sidebar__project--active'
+        ).dataset.projectId;
+
+        const selectedProject =
+          activeProjectId === 'today' || activeProjectId === 'all'
+            ? 'inbox'
+            : activeProjectId;
+
+        document.querySelector('.task-modal__select').value = selectedProject;
+      });
   }
 
   enableSubmitTask() {
