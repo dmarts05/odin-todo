@@ -6,10 +6,10 @@ function enableProjectSorting() {
   new Sortable(projects, {
     handle: '.sidebar__project__grip',
     animation: 150,
-    dragClass: 'hide',
-    onSort: () => {
-      //TODO prevent autoclick when sorting projects
-    },
+    ghotsCLass: 'disable',
+    chosenClass: 'disable',
+    dragClass: 'disable',
+    onSort: () => {},
   });
 }
 

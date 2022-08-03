@@ -31,6 +31,10 @@ i {
   opacity: 0;
 }
 
+.disable {
+  pointer-events: none;
+}
+
 .line-through {
   text-decoration: line-through;
 }
