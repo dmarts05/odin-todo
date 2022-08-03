@@ -76,6 +76,9 @@ function updateProjectViewTasks(projectId) {
 
   // Check if given id is the same as the currently showing project
   if (isShowingId) {
+    // Start slide transition
+    document.querySelector('.project-view__tasks').classList.add('slide');
+
     // Sort tasks by project's sorting method
     project.sortTasks();
 
@@ -86,6 +89,11 @@ function updateProjectViewTasks(projectId) {
     );
 
     enableTaskRemoval();
+
+    // End slide transition
+    setTimeout(() => {
+      document.querySelector('.project-view__tasks').classList.remove('slide');
+    }, 150);
   }
 
   // Add event listener that toggles checked status for every task

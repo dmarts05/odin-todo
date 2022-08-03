@@ -6,7 +6,7 @@
   grid-column: 1 / -1;
   padding: a.rem(32);
   background-color: var(--background-color-3);
-  transition: opacity 0.15s;
+  transition: transform 0.15s;
 
   &--active {
     grid-column: auto;
@@ -44,6 +44,7 @@
   &__tasks {
     display: flex;
     flex-direction: column;
+    transition: transform 0.15s;
   }
 
   &__task {

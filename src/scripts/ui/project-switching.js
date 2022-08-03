@@ -24,8 +24,8 @@ function removeSidebarProjectsActiveClass() {
 }
 
 function switchProject(sidebarProject) {
-  // Start fade transition
-  document.querySelector('.project-view').classList.add('fade');
+  // Start slide transition
+  document.querySelector('.project-view').classList.add('slide');
 
   if (sidebarProject.classList.contains('sidebar__project')) {
     removeSidebarProjectsActiveClass();
@@ -36,9 +36,9 @@ function switchProject(sidebarProject) {
     updateProjectViewTasks(projectId);
   }
 
+  // End slide transition
   setTimeout(() => {
-    // End fade transition
-    document.querySelector('.project-view').classList.remove('fade');
+    document.querySelector('.project-view').classList.remove('slide');
   }, 150);
 }
 

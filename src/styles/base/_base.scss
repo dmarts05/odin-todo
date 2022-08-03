@@ -27,8 +27,8 @@ i {
   opacity: 0;
 }
 
-.fade {
-  opacity: 0;
+.slide {
+  transform: translateX(-100%);
 }
 
 .disable {
