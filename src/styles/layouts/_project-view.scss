@@ -88,6 +88,10 @@
 
     &__due-date {
       font-size: clamp(a.rem(10), 8px + 1vw, a.rem(18));
+
+      &.overdue {
+        color: var(--overdue);
+      }
     }
   }
 }
