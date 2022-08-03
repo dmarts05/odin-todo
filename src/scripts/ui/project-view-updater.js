@@ -2,7 +2,7 @@ import { getProject } from '../logic/project-manager';
 import { getDefaultProjectsIds } from '../logic/default-projects';
 import { enableTaskRemoval } from './task-settings';
 import formatTaskDate from '../utils/format-task-date';
-import { isBefore } from 'date-fns';
+import { isPast, isToday } from 'date-fns';
 
 function toggleTaskCheckedStatus(e) {
   const activeProject = getProject(
@@ -29,7 +29,8 @@ function createProjectViewTaskStructure(task) {
 
   const taskLineThrough = task.checked ? 'line-through' : '';
   const taskChecked = task.checked ? 'checked' : '';
-  const overdue = isBefore(task.dueDate, Date.now()) ? 'overdue' : '';
+  const overdue =
+    isPast(task.dueDate) && !isToday(task.dueDate) ? 'overdue' : '';
 
   const formattedDate = formatTaskDate(task.dueDate);
 
