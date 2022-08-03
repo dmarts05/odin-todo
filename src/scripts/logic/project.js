@@ -92,7 +92,35 @@ export class Project {
         sortedTasks = this.tasks.sort((a, b) => a.name.localeCompare(b.name));
         break;
 
+      case 'priority':
+        this.sortTasks('name');
+        this.tasks.forEach((task) => {
+          if (task.priority === 'high') {
+            sortedTasks.push(task);
+          }
+        });
+
+        this.tasks.forEach((task) => {
+          if (task.priority === 'medium') {
+            sortedTasks.push(task);
+          }
+        });
+
+        this.tasks.forEach((task) => {
+          if (task.priority === 'low') {
+            sortedTasks.push(task);
+          }
+        });
+
+        this.tasks.forEach((task) => {
+          if (task.priority === 'none') {
+            sortedTasks.push(task);
+          }
+        });
+        break;
+
       case 'due-date':
+        this.sortTasks('name');
         sortedTasks = this.tasks.sort((a, b) =>
           compareAsc(a.dueDate, b.dueDate)
         );

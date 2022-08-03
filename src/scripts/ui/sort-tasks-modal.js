@@ -24,6 +24,9 @@ export class SortTasksModal extends Modal {
           <input class="${this.modalClass}__radio-input" type="radio" name="sort-method" id="sort-method-name" value="name" required>
           <label class="${this.modalClass}__label" for="sort-method-name">Name</label>
 
+          <input class="${this.modalClass}__radio-input" type="radio" name="sort-method" id="sort-method-priority" value="priority" required>
+          <label class="${this.modalClass}__label" for="sort-method-priority">Priority</label>
+
           <input class="${this.modalClass}__radio-input" type="radio" name="sort-method" id="sort-method-due-date" value="due-date" required>
           <label class="${this.modalClass}__label" for="sort-method-due-date">Due Date</label>
         </div>

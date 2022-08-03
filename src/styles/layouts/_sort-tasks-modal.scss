@@ -42,16 +42,6 @@
       text-transform: uppercase;
       text-align: center;
     }
-
-    @include a.breakpoint-max('m') {
-      label[for='sort-method-due-date'] {
-        grid-column: 1 / -1;
-      }
-    }
-
-    @include a.breakpoint-min('m') {
-      grid-template: 1fr / 1fr 1fr 1fr;
-    }
   }
 
   &__submit {
