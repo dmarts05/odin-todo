@@ -1,4 +1,7 @@
 import { Modal } from './modal';
+import { getProject } from '../logic/project-manager';
+import { getSortMethod } from '../logic/sort-tasks-form-handler';
+import { updateProjectViewTasks } from './project-view-updater';
 
 export class SortTasksModal extends Modal {
   constructor(toggleClass, modalClass) {
@@ -44,6 +47,16 @@ export class SortTasksModal extends Modal {
       sortTasksForm.reportValidity();
 
       if (sortTasksForm.checkValidity()) {
+        const activeProjectId = document.querySelector(
+          '.sidebar__project--active'
+        ).dataset.projectId;
+        const sortMethod = getSortMethod();
+
+        getProject(
+          document.querySelector('.sidebar__project--active').dataset.projectId
+        ).sortTasks(sortMethod);
+
+        updateProjectViewTasks(activeProjectId);
         super.hideModal();
       }
     });

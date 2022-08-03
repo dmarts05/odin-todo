@@ -72,9 +72,6 @@ export class Project {
     let sortedTasks = [];
 
     switch (sortMethod) {
-      case 'due-date':
-        break;
-
       case 'manual':
         const projectViewTasksIds = Array.from(
           document.querySelectorAll('.project-view__task')
@@ -83,6 +80,10 @@ export class Project {
         projectViewTasksIds.forEach((projectViewTaskId) =>
           sortedTasks.push(this.getTask(projectViewTaskId))
         );
+        break;
+
+      case 'name':
+        sortedTasks = this.tasks.sort((a, b) => a.name.localeCompare(b.name));
         break;
 
       default:
