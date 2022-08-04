@@ -95,6 +95,8 @@
   }
 
   &__project-name {
+    word-wrap: break-word;
+    word-break: break-word;
     text-transform: uppercase;
     line-height: a.rem(20);
   }
