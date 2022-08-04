@@ -33,12 +33,18 @@ function removeSidebarProjects() {
 
 function updateSidebarProjects() {
   const projects = getProjects();
+  const activeProjectId = document.querySelector('.sidebar__project--active')
+    .dataset.projectId;
 
   removeSidebarProjects();
 
   projects.forEach((project) => {
     if (project.canAddTasks && project.id !== 'inbox') {
       const projectStructure = createSidebarProjectStructure(project);
+
+      if (project.id === activeProjectId) {
+        projectStructure.classList.add('sidebar__project--active');
+      }
 
       sidebarProjects.appendChild(projectStructure);
     } else {

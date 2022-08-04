@@ -7,19 +7,20 @@ function removeTask(e) {
   // Start slide transition
   document.querySelector('.project-view__tasks').classList.add('slide');
 
+  const taskId = e.target.parentNode.parentNode.parentNode.dataset.taskId;
+
+  const projectWithRemovedTask = getProjectWithTask(taskId);
+
   setTimeout(() => {
-    const taskId = e.target.parentNode.parentNode.parentNode.dataset.taskId;
-
-    const projectWithRemovedTask = getProjectWithTask(taskId);
-
     projectWithRemovedTask.removeTask(projectWithRemovedTask.getTask(taskId));
 
     updateDefaultProjects();
     updateSidebarProjects();
-    updateProjectViewTasks(
-      document.querySelector('.sidebar__project--active').dataset.projectId
-    );
-    // End slide animation
+
+    updateProjectViewTasks(projectWithRemovedTask.id);
+
+    // End slide transition
+    document.querySelector('.project-view__tasks').classList.remove('slide');
   }, 150);
 }
 

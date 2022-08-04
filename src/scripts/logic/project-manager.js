@@ -1,3 +1,5 @@
+import { Task } from './task';
+
 let projects = [];
 
 function getProject(id) {
@@ -6,7 +8,7 @@ function getProject(id) {
 
 function getProjectWithTask(taskId) {
   return projects.find(
-    (project) => project.canAddTasks && project.getTask(taskId) !== null
+    (project) => project.canAddTasks && project.getTask(taskId) instanceof Task
   );
 }
 
