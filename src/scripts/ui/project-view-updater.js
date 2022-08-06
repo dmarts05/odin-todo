@@ -1,6 +1,6 @@
 import { getProject } from '../logic/project-manager';
 import { getDefaultProjectsIds } from '../logic/default-projects';
-import { enableTaskRemoval } from './task-settings';
+import { enableTaskRemoval, enableTaskEditing } from './task-settings';
 import formatTaskDate from '../utils/format-task-date';
 import { isPast, isToday } from 'date-fns';
 
@@ -61,7 +61,7 @@ function createProjectViewTaskStructure(task) {
   <div class="project-view__task__bottom">
     <p class="project-view__task__due-date ${overdue}">${formattedDate}</p>
     <div class="project-view__task__settings">
-      <i class="project-view__task__icon fa-solid fa-pen task-modal-toggle"></i>
+      <i class="project-view__task__icon fa-solid fa-pen task-modal-toggle edit-task-modal-toggle"></i>
       <i class="project-view__task__icon fa-solid fa-trash task-remove-btn"></i>
     </div>
   </div>
@@ -103,6 +103,7 @@ function updateProjectViewTasks(projectId) {
     );
 
     enableTaskRemoval();
+    enableTaskEditing();
 
     // End slide transition
     setTimeout(() => {

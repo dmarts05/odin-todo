@@ -2,6 +2,7 @@ import updateSidebarProjects from './sidebar-projects-updater';
 import { updateDefaultProjects } from '../logic/default-projects';
 import { updateProjectViewTasks } from './project-view-updater';
 import { getProjectWithTask } from '../logic/project-manager';
+import { taskModal } from '../..';
 
 function removeTask(e) {
   // Start slide transition
@@ -32,4 +33,9 @@ function enableTaskRemoval() {
   });
 }
 
-export { enableTaskRemoval };
+function enableTaskEditing() {
+  taskModal.toggles = 'task-modal-toggle';
+  taskModal.enableSwitchFormMode();
+}
+
+export { enableTaskRemoval, enableTaskEditing };

@@ -1,6 +1,6 @@
 import { Modal } from './modal';
 import { getTaskProjectId, getCreatedTask } from '../logic/task-form-handler';
-import { getProject } from '../logic/project-manager';
+import { getProject, getProjectWithTask } from '../logic/project-manager';
 import updateTaskFormProjects from './task-form-projects-updater';
 import { updateProjectViewTasks } from './project-view-updater';
 import updateSidebarProjects from './sidebar-projects-updater';
@@ -21,7 +21,7 @@ export class TaskModal extends Modal {
     modalStructure.innerHTML = `<div class="${this.modalClass}__items">
     <h2 class="${this.modalClass}__title">Add task</h2>
     <form action="" class="${this.modalClass}__form ${this.modalClass}__name">
-      <div class="${this.modalClass}__form-group">
+      <div class="${this.modalClass}__form-group ${this.modalClass}__name">
         <label class="${this.modalClass}__label" for="task-name">Name:</label>
         <input class="${this.modalClass}__text-input" type="text" name="task-name" id="task-name" required>
       </div>
@@ -62,9 +62,51 @@ export class TaskModal extends Modal {
     return modalStructure;
   }
 
+  enableSwitchFormMode() {
+    this.toggles.forEach((toggle) => {
+      toggle.addEventListener('click', (e) => {
+        const taskForm = document.querySelector('.task-modal__form');
+
+        const taskModalTitle = document.querySelector('.task-modal__title');
+        const taskFormSubmitBtn = document.getElementById('submit-task');
+
+        if (e.target.classList.contains('edit-task-modal-toggle')) {
+          taskModalTitle.textContent = 'Edit task';
+          taskFormSubmitBtn.textContent = 'Edit task';
+
+          const taskId =
+            e.target.parentNode.parentNode.parentNode.dataset.taskId;
+          const taskProject = getProjectWithTask(taskId);
+          const task = taskProject.getTask(taskId);
+
+          taskForm.dataset.taskId = taskId;
+
+          const taskFormName = document.getElementById('task-name');
+          const taskFormProject = document.getElementById('task-project');
+          const taskFormDueDate = document.getElementById('task-due-date');
+          const taskFormPriority = document.querySelector(
+            `input[type="radio"][name="task-priority"][value="${task.priority}"]`
+          );
+
+          taskFormName.value = task.name;
+          taskFormProject.value = taskProject.id;
+          taskFormDueDate.valueAsDate = task.dueDate;
+          taskFormPriority.checked = true;
+        } else {
+          taskForm.dataset.taskId = '';
+
+          taskModalTitle.textContent = 'Add task';
+          taskFormSubmitBtn.textContent = 'Add task';
+
+          taskForm.reset();
+        }
+      });
+    });
+  }
+
   enableSelectActiveProjectByDefault() {
     document
-      .querySelector('.task-modal-toggle')
+      .querySelector(`.${this.modalClass}-toggle`)
       .addEventListener('click', () => {
         const activeProjectId = document.querySelector(
           '.sidebar__project--active'
@@ -75,13 +117,14 @@ export class TaskModal extends Modal {
             ? 'inbox'
             : activeProjectId;
 
-        document.querySelector('.task-modal__select').value = selectedProject;
+        document.querySelector(`.${this.modalClass}__select`).value =
+          selectedProject;
       });
   }
 
   enableSubmitTask() {
     const submitTaskBtn = document.getElementById('submit-task');
-    const taskForm = document.querySelector('.task-modal__form');
+    const taskForm = document.querySelector(`.${this.modalClass}__form`);
 
     submitTaskBtn.addEventListener('click', (e) => {
       // Check form without submitting it
@@ -90,16 +133,24 @@ export class TaskModal extends Modal {
 
       if (taskForm.checkValidity()) {
         const task = getCreatedTask();
-        const taskProject = getProject(getTaskProjectId());
+        const taskFormId = taskForm.dataset.taskId;
+
+        const taskFormProject = getProject(getTaskProjectId());
         const activeProjectId = document.querySelector(
           '.sidebar__project--active'
         ).dataset.projectId;
-        taskProject.addTask(task);
+
+        // Check if a task is being edited
+        if (taskFormId) {
+          const taskProject = getProjectWithTask(taskFormId);
+          taskProject.removeTask(taskProject.getTask(taskFormId));
+        }
+
+        taskFormProject.addTask(task);
         updateDefaultProjects();
         updateProjectViewTasks(activeProjectId);
         updateSidebarProjects();
         super.hideModal();
-        taskForm.reset();
       }
     });
   }

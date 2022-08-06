@@ -48,3 +48,5 @@ const sortTasksModal = new SortTasksModal(
 
 // Set home project view
 switchProject(document.querySelector('.home'));
+
+export { taskModal };

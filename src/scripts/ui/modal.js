@@ -4,11 +4,18 @@ export class Modal {
 
     this.injectModalToHTML(this.createModalStructure());
 
-    this.toggles = Array.from(
+    this.toggles = toggleClass;
+    this.modal = document.getElementsByClassName(`${this.modalClass}`)[0];
+  }
+
+  get toggles() {
+    return this._toggles;
+  }
+
+  set toggles(toggleClass) {
+    this._toggles = Array.from(
       document.getElementsByClassName(`${toggleClass}`)
     );
-    this.modal = document.getElementsByClassName(`${this.modalClass}`)[0];
-
     this.enableModalToggling();
   }
 
