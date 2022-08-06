@@ -128,11 +128,13 @@ function updateProjectViewHeader(projectId) {
     )
   ) {
     // Disable edit and remove buttons for given project
-    document.querySelector('.project-edit-btn').classList.add('hide');
+    document.querySelector('.edit-project-modal-toggle').classList.add('hide');
     document.querySelector('.project-remove-btn').classList.add('hide');
   } else {
     // Enable edit and remove buttons for given project
-    document.querySelector('.project-edit-btn').classList.remove('hide');
+    document
+      .querySelector('.edit-project-modal-toggle')
+      .classList.remove('hide');
     document.querySelector('.project-remove-btn').classList.remove('hide');
   }
 

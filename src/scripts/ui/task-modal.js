@@ -65,9 +65,11 @@ export class TaskModal extends Modal {
   enableSwitchFormMode() {
     this.toggles.forEach((toggle) => {
       toggle.addEventListener('click', (e) => {
-        const taskForm = document.querySelector('.task-modal__form');
+        const taskForm = document.querySelector(`.${this.modalClass}__form`);
 
-        const taskModalTitle = document.querySelector('.task-modal__title');
+        const taskModalTitle = document.querySelector(
+          `.${this.modalClass}__title`
+        );
         const taskFormSubmitBtn = document.getElementById('submit-task');
 
         if (e.target.classList.contains('edit-task-modal-toggle')) {

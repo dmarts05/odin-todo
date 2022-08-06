@@ -1,13 +1,15 @@
 import { Modal } from './modal';
 import getCreatedProject from '../logic/project-form-handler';
-import { addProject } from '../logic/project-manager';
+import { addProject, getProject } from '../logic/project-manager';
 import updateSidebarProjects from './sidebar-projects-updater';
 import updateTaskFormProjects from './task-form-projects-updater';
+import { updateProjectViewHeader } from './project-view-updater';
 
 export class ProjectModal extends Modal {
   constructor(toggleClass, modalClass) {
     super(toggleClass, modalClass);
     this.enableSubmitProject();
+    this.enableSwitchFormMode();
   }
 
   createModalStructure() {
@@ -36,6 +38,43 @@ export class ProjectModal extends Modal {
     return modalStructure;
   }
 
+  enableSwitchFormMode() {
+    this.toggles.forEach((toggle) => {
+      toggle.addEventListener('click', (e) => {
+        const projectForm = document.querySelector(`.${this.modalClass}__form`);
+
+        const projectModalTitle = document.querySelector(
+          `.${this.modalClass}__title`
+        );
+        const projectFormSubmitBtn = document.getElementById('submit-project');
+
+        if (e.target.classList.contains('edit-project-modal-toggle')) {
+          projectModalTitle.textContent = 'Edit project';
+          projectFormSubmitBtn.textContent = 'Edit project';
+
+          const projectId = document.querySelector('.sidebar__project--active')
+            .dataset.projectId;
+          const project = getProject(projectId);
+
+          projectForm.dataset.projectId = projectId;
+
+          const projectFormName = document.getElementById('project-name');
+          const projectFormColor = document.getElementById('project-color');
+
+          projectFormName.value = project.name;
+          projectFormColor.value = project.color;
+        } else {
+          projectForm.dataset.projectId = '';
+
+          projectModalTitle.textContent = 'Add project';
+          projectFormSubmitBtn.textContent = 'Add project';
+
+          projectForm.reset();
+        }
+      });
+    });
+  }
+
   enableSubmitProject() {
     const submitProjectBtn = document.getElementById('submit-project');
     const projectForm = document.querySelector('.project-modal__form');
@@ -46,8 +85,20 @@ export class ProjectModal extends Modal {
       projectForm.reportValidity();
 
       if (projectForm.checkValidity()) {
-        const project = getCreatedProject();
-        addProject(project);
+        const formProject = getCreatedProject();
+        let project;
+        const projectFormId = projectForm.dataset.projectId;
+
+        // Check if a task is being edited
+        if (projectFormId) {
+          project = getProject(projectFormId);
+          project.name = formProject.name;
+          project.color = formProject.color;
+          updateProjectViewHeader(projectFormId);
+        } else {
+          project = getCreatedProject();
+          addProject(project);
+        }
         updateSidebarProjects();
         updateTaskFormProjects();
         super.hideModal();
