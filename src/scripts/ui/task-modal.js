@@ -11,7 +11,6 @@ export class TaskModal extends Modal {
     super(toggleClass, modalClass);
     updateTaskFormProjects();
     this.enableSubmitTask();
-    this.enableSelectActiveProjectByDefault();
   }
 
   createModalStructure() {
@@ -101,27 +100,23 @@ export class TaskModal extends Modal {
           taskFormSubmitBtn.textContent = 'Add task';
 
           taskForm.reset();
+          this.selectActiveProjectByDefault();
         }
       });
     });
   }
 
-  enableSelectActiveProjectByDefault() {
-    document
-      .querySelector(`.${this.modalClass}-toggle`)
-      .addEventListener('click', () => {
-        const activeProjectId = document.querySelector(
-          '.sidebar__project--active'
-        ).dataset.projectId;
+  selectActiveProjectByDefault() {
+    const activeProjectId = document.querySelector('.sidebar__project--active')
+      .dataset.projectId;
 
-        const selectedProject =
-          activeProjectId === 'today' || activeProjectId === 'all'
-            ? 'inbox'
-            : activeProjectId;
+    const selectedProject =
+      activeProjectId === 'today' || activeProjectId === 'all'
+        ? 'inbox'
+        : activeProjectId;
 
-        document.querySelector(`.${this.modalClass}__select`).value =
-          selectedProject;
-      });
+    document.querySelector(`.${this.modalClass}__select`).value =
+      selectedProject;
   }
 
   enableSubmitTask() {
@@ -145,6 +140,8 @@ export class TaskModal extends Modal {
         // Check if a task is being edited
         if (taskFormId) {
           const taskProject = getProjectWithTask(taskFormId);
+          task.id = taskProject.getTask(taskFormId).id;
+
           taskProject.removeTask(taskProject.getTask(taskFormId));
         }
 
