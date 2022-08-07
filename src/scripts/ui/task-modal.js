@@ -22,7 +22,7 @@ export class TaskModal extends Modal {
     <form action="" class="${this.modalClass}__form ${this.modalClass}__name">
       <div class="${this.modalClass}__form-group ${this.modalClass}__name">
         <label class="${this.modalClass}__label" for="task-name">Name:</label>
-        <input class="${this.modalClass}__text-input" type="text" name="task-name" id="task-name" required>
+        <textarea class="${this.modalClass}__text-input" type="text" name="task-name" id="task-name" maxlength="500" required></textarea>
       </div>
 
       <div class="${this.modalClass}__form-group ${this.modalClass}__project">

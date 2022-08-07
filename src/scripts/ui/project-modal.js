@@ -21,7 +21,7 @@ export class ProjectModal extends Modal {
     <form action="" class="${this.modalClass}__form">
       <div class="${this.modalClass}__form-group">
         <label class="${this.modalClass}__label" for="project-name">Name:</label>
-        <input class="${this.modalClass}__text-input" type="text" name="project-name" id="project-name" required>
+        <input class="${this.modalClass}__text-input" type="text" name="project-name" id="project-name" maxlenght="120" required>
       </div>
 
       <div class="${this.modalClass}__form-group ${this.modalClass}__color">

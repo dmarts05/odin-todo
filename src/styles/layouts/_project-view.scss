@@ -7,7 +7,7 @@
   padding: a.rem(32);
   background-color: var(--background-color-3);
   transition: transform 0.15s;
-  overflow: hidden;
+  overflow: auto;
 
   &--active {
     grid-column: auto;
