@@ -3,6 +3,7 @@ import { updateDefaultProjects } from '../../logic/default-projects';
 import { updateProjectViewTasks } from '../updaters/project-view-updater';
 import { getProjectWithTask } from '../../logic/project-manager';
 import { taskModal } from '../../..';
+import { saveProjectsToStorage } from '../../utils/storage';
 
 function removeTask(e) {
   if (confirm('Do you really want to remove this task?')) {
@@ -19,7 +20,11 @@ function removeTask(e) {
       updateDefaultProjects();
       updateSidebarProjects();
 
-      updateProjectViewTasks(projectWithRemovedTask.id);
+      updateProjectViewTasks(
+        document.querySelector('.sidebar__project--active').dataset.projectId
+      );
+
+      saveProjectsToStorage();
 
       // End slide transition
       document.querySelector('.project-view__tasks').classList.remove('slide');

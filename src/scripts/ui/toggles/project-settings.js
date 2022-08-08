@@ -2,6 +2,7 @@ import updateSidebarProjects from '../updaters/sidebar-projects-updater';
 import { updateDefaultProjects } from '../../logic/default-projects';
 import { switchProject } from '../toggles/project-switching';
 import { getProject, removeProject } from '../../logic/project-manager';
+import { saveProjectsToStorage } from '../../utils/storage';
 
 function enableProjectRemoval() {
   document
@@ -16,6 +17,8 @@ function enableProjectRemoval() {
         updateDefaultProjects();
         updateSidebarProjects();
         switchProject(document.querySelector('.home'));
+
+        saveProjectsToStorage();
       }
     });
 }
