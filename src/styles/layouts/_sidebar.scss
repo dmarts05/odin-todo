@@ -10,7 +10,7 @@
   gap: a.rem(16);
   padding: a.rem(26) 0;
   background-color: var(--background-color-2);
-  box-shadow: rgba(0, 0, 0, 0.01) 10px 10px 0px, rgba(0, 0, 0, 0.03) 6px 6px 0px;
+  box-shadow: rgba(0, 0, 0, 0.01) 0px 0px 0px, rgba(0, 0, 0, 0.01) 6px 0px 0px;
   transform: translateX(-100%);
   transition: transform 0.15s;
   overflow: hidden;

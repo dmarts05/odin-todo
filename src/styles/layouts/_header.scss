@@ -19,13 +19,23 @@
 
   &__logo {
     width: clamp(a.rem(20), 5vw, a.rem(30));
+    transition: filter 0.15s;
 
     @include a.breakpoint-max('m') {
       display: none;
+    }
+
+    &.light {
+      filter: invert(100%);
     }
   }
 
   &__icon.fa-house {
     font-size: clamp(a.rem(15), 10px + 1.25vw, a.rem(20));
+  }
+
+  &__icon.fa-sun,
+  &__icon.fa-moon {
+    font-size: clamp(a.rem(17), 10px + 1.25vw, a.rem(20));
   }
 }

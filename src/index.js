@@ -1,5 +1,6 @@
 import './styles/index.scss';
 import fixVhOnMobile from './scripts/ui/misc/vh-fix-mobile';
+import enableThemeToggling from './scripts/ui/toggles/theme-toggles';
 import {
   enableSidebarToggling,
   showSidebarAtWidth,
@@ -24,6 +25,7 @@ import { enableProjectRemoval } from './scripts/ui/toggles/project-settings';
 
 // Enable app basic functionality
 fixVhOnMobile();
+enableThemeToggling();
 enableSidebarToggling();
 showSidebarAtWidth(700);
 enableProjectSorting();

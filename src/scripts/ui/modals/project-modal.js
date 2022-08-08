@@ -26,7 +26,7 @@ export class ProjectModal extends Modal {
 
       <div class="${this.modalClass}__form-group ${this.modalClass}__color">
         <label class="${this.modalClass}__label" for="project-color">Color:</label>
-        <input type="color" name="project-color" id="project-color" value="#f6f6f6" required>
+        <input type="color" name="project-color" id="project-color" value="#246fe0" required>
       </div>
 
       <div class="${this.modalClass}__form-group ${this.modalClass}__submit">

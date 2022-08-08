@@ -1,11 +1,22 @@
 :root {
+  --low-priority: #246fe0;
+  --medium-priority: #eb8909;
+  --high-priority: #d1453b;
+  --overdue: #d1453b;
+}
+
+:root.dark {
   --background-color-1: #1f1f1f;
   --background-color-2: #1a1a1a;
   --background-color-3: #171717;
   --text-color-1: #f6f6f6;
   --text-color-2: #c8c8c8;
-  --low-priority: #246fe0;
-  --medium-priority: #eb8909;
-  --high-priority: #d1453b;
-  --overdue: #d1453b;
+}
+
+:root.light {
+  --background-color-1: #f6f6f6;
+  --background-color-2: #f0f0f0;
+  --background-color-3: #f0f0f0;
+  --text-color-1: #232323;
+  --text-color-2: #2d2d2d;
 }
