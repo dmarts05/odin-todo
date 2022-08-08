@@ -31,7 +31,7 @@ showSidebarAtWidth(700);
 enableProjectSorting();
 enableTaskSorting();
 addDefaultProjects();
-enableHomeProjectBtn();
+enableHomeProjectBtn(700);
 enableDefaultProjectSwitching();
 enableProjectRemoval();
 updateSidebarProjects(); // Enables project switching too
