@@ -22,6 +22,10 @@ import {
 import enableHomeProjectBtn from './scripts/ui/toggles/home-project-btn';
 import updateSidebarProjects from './scripts/ui/updaters/sidebar-projects-updater';
 import { enableProjectRemoval } from './scripts/ui/toggles/project-settings';
+import { loadProjectsFromStorage } from './scripts/utils/storage';
+
+// Load app data
+loadProjectsFromStorage();
 
 // Enable app basic functionality
 fixVhOnMobile();
@@ -30,7 +34,6 @@ enableSidebarToggling();
 showSidebarAtWidth(700);
 enableProjectSorting();
 enableTaskSorting();
-addDefaultProjects();
 enableHomeProjectBtn(700);
 enableDefaultProjectSwitching();
 enableProjectRemoval();

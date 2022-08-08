@@ -16,6 +16,10 @@ function getProjects() {
   return projects;
 }
 
+function setProjects(arrProjects) {
+  projects = arrProjects;
+}
+
 function addProject(project) {
   projects.push(project);
 }
@@ -49,6 +53,7 @@ function sortProjects(sortMethod) {
 export {
   getProject,
   getProjects,
+  setProjects,
   addProject,
   removeProject,
   getProjectWithTask,

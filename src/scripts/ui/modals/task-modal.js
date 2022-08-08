@@ -8,6 +8,7 @@ import updateTaskFormProjects from '../updaters/task-form-projects-updater';
 import { updateProjectViewTasks } from '../updaters/project-view-updater';
 import updateSidebarProjects from '../updaters/sidebar-projects-updater';
 import { updateDefaultProjects } from '../../logic/default-projects';
+import { saveProjectsToStorage } from '../../utils/storage';
 
 export class TaskModal extends Modal {
   constructor(toggleClass, modalClass) {
@@ -154,6 +155,8 @@ export class TaskModal extends Modal {
         updateProjectViewTasks(activeProjectId);
         updateSidebarProjects();
         super.hideModal();
+
+        saveProjectsToStorage();
       }
     });
   }

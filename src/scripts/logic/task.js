@@ -28,6 +28,10 @@ export class Task {
     this._priority = taskPriority;
   }
 
+  set id(taskId) {
+    this._id = taskId;
+  }
+
   get name() {
     return this._name;
   }

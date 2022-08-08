@@ -4,6 +4,7 @@ import { addProject, getProject } from '../../logic/project-manager';
 import updateSidebarProjects from '../updaters/sidebar-projects-updater';
 import updateTaskFormProjects from '../updaters/task-form-projects-updater';
 import { updateProjectViewHeader } from '../updaters/project-view-updater';
+import { saveProjectsToStorage } from '../../utils/storage';
 
 export class ProjectModal extends Modal {
   constructor(toggleClass, modalClass) {
@@ -99,10 +100,13 @@ export class ProjectModal extends Modal {
           project = getCreatedProject();
           addProject(project);
         }
+
         updateSidebarProjects();
         updateTaskFormProjects();
         super.hideModal();
         projectForm.reset();
+
+        saveProjectsToStorage();
       }
     });
   }
