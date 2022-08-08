@@ -5,24 +5,26 @@ import { getProjectWithTask } from '../../logic/project-manager';
 import { taskModal } from '../../..';
 
 function removeTask(e) {
-  // Start slide transition
-  document.querySelector('.project-view__tasks').classList.add('slide');
+  if (confirm('Do you really want to remove this task?')) {
+    // Start slide transition
+    document.querySelector('.project-view__tasks').classList.add('slide');
 
-  const taskId = e.target.parentNode.parentNode.parentNode.dataset.taskId;
+    const taskId = e.target.parentNode.parentNode.parentNode.dataset.taskId;
 
-  const projectWithRemovedTask = getProjectWithTask(taskId);
+    const projectWithRemovedTask = getProjectWithTask(taskId);
 
-  setTimeout(() => {
-    projectWithRemovedTask.removeTask(projectWithRemovedTask.getTask(taskId));
+    setTimeout(() => {
+      projectWithRemovedTask.removeTask(projectWithRemovedTask.getTask(taskId));
 
-    updateDefaultProjects();
-    updateSidebarProjects();
+      updateDefaultProjects();
+      updateSidebarProjects();
 
-    updateProjectViewTasks(projectWithRemovedTask.id);
+      updateProjectViewTasks(projectWithRemovedTask.id);
 
-    // End slide transition
-    document.querySelector('.project-view__tasks').classList.remove('slide');
-  }, 150);
+      // End slide transition
+      document.querySelector('.project-view__tasks').classList.remove('slide');
+    }, 150);
+  }
 }
 
 function enableTaskRemoval() {
