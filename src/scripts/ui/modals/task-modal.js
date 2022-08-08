@@ -144,6 +144,7 @@ export class TaskModal extends Modal {
         if (taskFormId) {
           const taskProject = getProjectWithTask(taskFormId);
           task.id = taskProject.getTask(taskFormId).id;
+          task.checked = taskProject.getTask(taskFormId).checked;
 
           taskProject.removeTask(taskProject.getTask(taskFormId));
         }
