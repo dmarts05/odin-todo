@@ -1,7 +1,7 @@
 import {
   updateProjectViewTasks,
   updateProjectViewHeader,
-} from './project-view-updater';
+} from '../updaters/project-view-updater';
 
 function autoToggleSidebarSwitchingProject(sidebarProject, autoSwitchWidth) {
   const width = window.innerWidth > 0 ? window.innerWidth : screen.width;

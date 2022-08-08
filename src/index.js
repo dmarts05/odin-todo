@@ -1,26 +1,26 @@
 import './styles/index.scss';
-import fixVhOnMobile from './scripts/ui/vh-fix-mobile';
+import fixVhOnMobile from './scripts/ui/misc/vh-fix-mobile';
 import {
   enableSidebarToggling,
   showSidebarAtWidth,
-} from './scripts/ui/sidebar-toggling.js';
-import enableProjectSorting from './scripts/ui/drag-n-drop-sort-projects';
-import enableTaskSorting from './scripts/ui/drag-n-drop-sort-tasks';
+} from './scripts/ui/toggles/sidebar-toggling.js';
+import enableProjectSorting from './scripts/ui/misc/drag-n-drop-sort-projects';
+import enableTaskSorting from './scripts/ui/misc/drag-n-drop-sort-tasks';
 import {
   switchProject,
   enableDefaultProjectSwitching,
-} from './scripts/ui/project-switching';
-import { AddModal } from './scripts/ui/add-modal';
-import { TaskModal } from './scripts/ui/task-modal';
-import { ProjectModal } from './scripts/ui/project-modal';
-import { SortTasksModal } from './scripts/ui/sort-tasks-modal.js';
+} from './scripts/ui/toggles/project-switching';
+import { AddModal } from './scripts/ui/modals/add-modal';
+import { TaskModal } from './scripts/ui/modals/task-modal';
+import { ProjectModal } from './scripts/ui/modals/project-modal';
+import { SortTasksModal } from './scripts/ui/modals/sort-tasks-modal.js';
 import {
   addDefaultProjects,
   updateDefaultProjects,
 } from './scripts/logic/default-projects';
-import enableHomeProjectBtn from './scripts/ui/home-project-btn';
-import updateSidebarProjects from './scripts/ui/sidebar-projects-updater';
-import { enableProjectRemoval } from './scripts/ui/project-settings';
+import enableHomeProjectBtn from './scripts/ui/toggles/home-project-btn';
+import updateSidebarProjects from './scripts/ui/updaters/sidebar-projects-updater';
+import { enableProjectRemoval } from './scripts/ui/toggles/project-settings';
 
 // Enable app basic functionality
 fixVhOnMobile();
@@ -32,8 +32,6 @@ addDefaultProjects();
 enableHomeProjectBtn();
 enableDefaultProjectSwitching();
 enableProjectRemoval();
-
-// Load app data
 updateSidebarProjects(); // Enables project switching too
 updateDefaultProjects();
 

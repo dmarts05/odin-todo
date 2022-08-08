@@ -1,8 +1,8 @@
-import updateSidebarProjects from './sidebar-projects-updater';
-import { updateDefaultProjects } from '../logic/default-projects';
-import { updateProjectViewTasks } from './project-view-updater';
-import { getProjectWithTask } from '../logic/project-manager';
-import { taskModal } from '../..';
+import updateSidebarProjects from '../updaters/sidebar-projects-updater';
+import { updateDefaultProjects } from '../../logic/default-projects';
+import { updateProjectViewTasks } from '../updaters/project-view-updater';
+import { getProjectWithTask } from '../../logic/project-manager';
+import { taskModal } from '../../..';
 
 function removeTask(e) {
   // Start slide transition

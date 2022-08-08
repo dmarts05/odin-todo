@@ -1,7 +1,7 @@
 import { Modal } from './modal';
-import { getProject } from '../logic/project-manager';
-import { getSortMethod } from '../logic/sort-tasks-form-handler';
-import { updateProjectViewTasks } from './project-view-updater';
+import { getProject } from '../../logic/project-manager';
+import { getSortMethod } from '../../logic/sort-tasks-form-handler';
+import { updateProjectViewTasks } from '../updaters/project-view-updater';
 
 export class SortTasksModal extends Modal {
   constructor(toggleClass, modalClass) {

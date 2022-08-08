@@ -1,5 +1,5 @@
-import { getProjects } from '../logic/project-manager';
-import { enableProjectSwitching } from './project-switching';
+import { getProjects } from '../../logic/project-manager';
+import { enableProjectSwitching } from '../toggles/project-switching';
 
 const sidebarProjects = document.querySelector('.sidebar__projects');
 

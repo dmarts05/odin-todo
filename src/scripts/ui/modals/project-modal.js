@@ -1,9 +1,9 @@
 import { Modal } from './modal';
-import getCreatedProject from '../logic/project-form-handler';
-import { addProject, getProject } from '../logic/project-manager';
-import updateSidebarProjects from './sidebar-projects-updater';
-import updateTaskFormProjects from './task-form-projects-updater';
-import { updateProjectViewHeader } from './project-view-updater';
+import getCreatedProject from '../..//logic/project-form-handler';
+import { addProject, getProject } from '../../logic/project-manager';
+import updateSidebarProjects from '../updaters/sidebar-projects-updater';
+import updateTaskFormProjects from '../updaters/task-form-projects-updater';
+import { updateProjectViewHeader } from '../updaters/project-view-updater';
 
 export class ProjectModal extends Modal {
   constructor(toggleClass, modalClass) {

@@ -1,7 +1,7 @@
-import { getProject } from '../logic/project-manager';
-import { getDefaultProjectsIds } from '../logic/default-projects';
-import { enableTaskRemoval, enableTaskEditing } from './task-settings';
-import formatTaskDate from '../utils/format-task-date';
+import { getProject } from '../../logic/project-manager';
+import { getDefaultProjectsIds } from '../../logic/default-projects';
+import { enableTaskRemoval, enableTaskEditing } from '../toggles/task-settings';
+import formatTaskDate from '../../utils/format-task-date';
 import { isPast, isToday } from 'date-fns';
 
 function toggleTaskCheckedStatus(e) {

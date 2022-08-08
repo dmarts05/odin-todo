@@ -1,7 +1,7 @@
-import updateSidebarProjects from './sidebar-projects-updater';
-import { updateDefaultProjects } from '../logic/default-projects';
-import { switchProject } from './project-switching';
-import { getProject, removeProject } from '../logic/project-manager';
+import updateSidebarProjects from '../updaters/sidebar-projects-updater';
+import { updateDefaultProjects } from '../../logic/default-projects';
+import { switchProject } from '../toggles/project-switching';
+import { getProject, removeProject } from '../../logic/project-manager';
 
 function enableProjectRemoval() {
   document

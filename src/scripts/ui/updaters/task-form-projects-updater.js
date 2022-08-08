@@ -1,4 +1,4 @@
-import { getProjects } from '../logic/project-manager';
+import { getProjects } from '../../logic/project-manager';
 
 function removeTaskFormProjects() {
   const projectSelectInput = document.getElementById('task-project');

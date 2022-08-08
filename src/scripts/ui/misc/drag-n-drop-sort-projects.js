@@ -1,5 +1,5 @@
 import Sortable from 'sortablejs/modular/sortable.core.esm.js';
-import { sortProjects } from '../logic/project-manager';
+import { sortProjects } from '../../logic/project-manager';
 
 function enableProjectSorting() {
   const projects = document.querySelector('.sidebar__projects');

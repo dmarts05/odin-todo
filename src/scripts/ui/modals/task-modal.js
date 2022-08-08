@@ -1,10 +1,13 @@
 import { Modal } from './modal';
-import { getTaskProjectId, getCreatedTask } from '../logic/task-form-handler';
-import { getProject, getProjectWithTask } from '../logic/project-manager';
-import updateTaskFormProjects from './task-form-projects-updater';
-import { updateProjectViewTasks } from './project-view-updater';
-import updateSidebarProjects from './sidebar-projects-updater';
-import { updateDefaultProjects } from '../logic/default-projects';
+import {
+  getTaskProjectId,
+  getCreatedTask,
+} from '../../logic/task-form-handler';
+import { getProject, getProjectWithTask } from '../../logic/project-manager';
+import updateTaskFormProjects from '../updaters/task-form-projects-updater';
+import { updateProjectViewTasks } from '../updaters/project-view-updater';
+import updateSidebarProjects from '../updaters/sidebar-projects-updater';
+import { updateDefaultProjects } from '../../logic/default-projects';
 
 export class TaskModal extends Modal {
   constructor(toggleClass, modalClass) {

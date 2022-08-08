@@ -1,6 +1,6 @@
-import Sortable from 'sortablejs/modular/sortable.core.esm.js';
-import { getProject } from '../logic/project-manager';
-import { updateProjectViewTasks } from './project-view-updater';
+import Sortable from 'sortablejs/modular/sortable.core.esm';
+import { getProject } from '../../logic/project-manager';
+import { updateProjectViewTasks } from '../updaters/project-view-updater';
 
 function enableTaskSorting() {
   const tasks = document.querySelector('.project-view__tasks');
