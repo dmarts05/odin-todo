@@ -7,14 +7,16 @@ function enableProjectRemoval() {
   document
     .querySelector('.project-remove-btn')
     .addEventListener('click', () => {
-      const removedProject = getProject(
-        document.querySelector('.sidebar__project--active').dataset.projectId
-      );
+      if (confirm('Do you really want to remove this project and its tasks?')) {
+        const removedProject = getProject(
+          document.querySelector('.sidebar__project--active').dataset.projectId
+        );
 
-      removeProject(removedProject);
-      updateDefaultProjects();
-      updateSidebarProjects();
-      switchProject(document.querySelector('.home'));
+        removeProject(removedProject);
+        updateDefaultProjects();
+        updateSidebarProjects();
+        switchProject(document.querySelector('.home'));
+      }
     });
 }
 
