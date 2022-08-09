@@ -1,5 +1,6 @@
 import generateId from '../utils/id-generator';
 import { compareAsc } from 'date-fns';
+import { saveProjectsToStorage } from '../utils/storage';
 
 export class Project {
   id = generateId();
@@ -137,5 +138,7 @@ export class Project {
     Array.prototype.push.apply(sortedTasks, checkedTasks);
 
     this.tasks = sortedTasks;
+
+    saveProjectsToStorage();
   }
 }

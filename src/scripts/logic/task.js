@@ -1,4 +1,5 @@
 import generateId from '../utils/id-generator';
+import { saveProjectsToStorage } from '../utils/storage';
 
 export class Task {
   checked = false;
@@ -54,5 +55,6 @@ export class Task {
 
   toggleChecked() {
     this.checked = !this.checked;
+    saveProjectsToStorage();
   }
 }

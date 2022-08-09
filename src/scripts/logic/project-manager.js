@@ -1,4 +1,5 @@
 import { Task } from './task';
+import { saveProjectsToStorage } from '../utils/storage';
 
 let projects = [];
 
@@ -48,6 +49,8 @@ function sortProjects(sortMethod) {
   }
 
   projects = sortedProjects;
+
+  saveProjectsToStorage();
 }
 
 export {
